@@ -1,0 +1,6 @@
+richevent
+=========
+
+.. currentmodule:: atenxa
+
+.. autofunction:: richevent

@@ -11,7 +11,6 @@ AfterEvent, TimerEventのコンストラクタで `obj` 属性をレイアウト
 当該オブジェクトのイベントハンドラにもrichevent関数を記述する必要があります。
 """
 import vrmapi
-#from atenxa.basis import *
 from . import _DEBUG
 
 _LAYOUT = vrmapi.LAYOUT()

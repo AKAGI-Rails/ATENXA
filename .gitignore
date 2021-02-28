@@ -2,3 +2,6 @@
 __pycache__
 /.vs
 /archive
+/vrmapi.py
+/make.bat
+/Makefile
