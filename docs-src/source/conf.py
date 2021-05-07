@@ -88,21 +88,23 @@ html_theme_options = {
 
     # Specify a base_url used to generate sitemap.xml. If not
     # specified, then no sitemap will be built.
-    'base_url': 'https://project.github.io/project',
+    'base_url': 'https://akagi-rails.github.io/ATENXA/',
 
     # Set the color and the accent color
-    'theme_color': 'b92929',
+    'theme_color': '3f51b5',
     'color_primary': 'indigo',
     'color_accent': 'yellow',
 
     'logo_icon': 'subway',
 
     # Set the repo location to get a badge with stats
-    #'repo_url': 'https://github.com/project/project/',
-    #'repo_name': 'Project',
+    'repo_url': 'https://github.com/AKAGI-Rails/vrmnx-toruo',
+    'repo_name': 'ATENXA for VRMNX',
 
     # Visible levels of the global TOC; -1 means unlimited
-    'globaltoc_depth': 3,
+    'globaltoc_depth': 2,
+    'globaltoc_collapse': True,
+
 }
 html_sidebars = {
     "**": ["logo-text.html", "globaltoc.html", "localtoc.html", "searchbox.html"]
