@@ -108,7 +108,7 @@ class CrossingHub(object):
 
     def _update_sign(self):
         """方向表示器の更新"""
-        sign = 0b0
+        sign = 0b00
         if self.queue[0]:
             sign = sign | 0b01
         if self.queue[1]:
@@ -116,6 +116,7 @@ class CrossingHub(object):
         if sign:
             for obj, rev, delay in self.members:
                 if rev and sign < 3:
-                    printLOG(obj, "SIGN REVERSED.")
-                    sign = sign ^ 0b11 # ビット反転
-                obj.SetCrossingSign(sign)
+                    obj.SetCrossingSign(sign^3)
+                else:
+                    obj.SetCrossingSign(sign)
+                printLOG(obj.GetID(),rev,delay, "SIGN UPDATED.", sign)
