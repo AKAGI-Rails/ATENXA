@@ -61,16 +61,16 @@ class BaseEvent(object):
     
     このクラス自体はイベントとしての機能はありません。
     """
-    def __init__(self, callback, *args, userid=0, obj=None, **kwargs):
+    def __init__(self, callback, args=None, kwargs=None, userid=0, obj=None):
         self.eventid = -1   # システムのイベントID
         self._callback = callback
-        self._args = args
+        self._args = args if args is not None else []
+        self._kwargs = kwargs if kwargs is not None else {}
         self.userid = userid    # ユーザID
         if obj:
             self._obj = obj
         else:
             self._obj = _LAYOUT
-        self._kwargs = kwargs
 
     def exec(self):
         """コールバック関数を実行します。
@@ -85,6 +85,9 @@ class BaseEvent(object):
 
 class AfterEvent(BaseEvent):
     """ 指定時間後に実行するATENXA式イベント
+
+    interval秒後に引数args，キーワード引数kwargsでcallbackを実行します。
+    args*がNoneなら空のリストが使用されます。
     
     Args:
         interval: 時間(秒)
@@ -97,7 +100,7 @@ class AfterEvent(BaseEvent):
     Example:
         1.5秒後に編成オブジェクトtrnでSetTimerVoltage
 
-        >>> AfterEvent(1.5, trn.SetTimerVoltage, 5.0, 0.2)
+        >>> AfterEvent(1.5, trn.SetTimerVoltage, args=(5.0, 0.2))
 
         指定時間になると次が実行されます。
 
@@ -105,8 +108,9 @@ class AfterEvent(BaseEvent):
 
     callbackにはユーザーが定義した関数やクラスメソッドを与えることもできます。
     """
-    def __init__(self, interval, callback, *args, userid=0, obj=None, **kwargs):
-        super().__init__(callback, *args, userid=userid, obj=obj, **kwargs)
+    def __init__(self, interval, callback, args=None, kwargs=None, userid=0, obj=None):
+        super().__init__(callback, args, kwargs, userid, obj)
+        self._interval = interval
         self.eventid = self._obj.SetEventAfter(interval, userid)    #: システムが発行したイベントID
         _register[self.eventid] = self
 
@@ -133,8 +137,8 @@ class TimerEvent(BaseEvent):
         userid (optional): ユーザID
         obj (optional): イベント発生対象のオブジェクト。 (default=LAYOUT)
     """
-    def __init__(self, interval, callback, *args, userid=0, obj=None, **kwargs):
-        super().__init__(callback, *args, userid=userid, obj=obj, **kwargs)
+    def __init__(self, interval, callback, args=None, kwargs=None, userid=0, obj=None):
+        super().__init__(callback, args, kwargs, userid, obj)
         self.eventid = self._obj.SetEventTimer(interval, userid)    #: システムが発行したイベントID
         _register[self.eventid] = self
 

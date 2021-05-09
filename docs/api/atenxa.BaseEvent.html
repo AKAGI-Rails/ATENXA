@@ -57,8 +57,6 @@
     <script src="../_static/translations.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="TimerEvent" href="atenxa.TimerEvent.html" />
-    <link rel="prev" title="AfterEvent" href="atenxa.AfterEvent.html" />
   
    
 
@@ -152,7 +150,6 @@
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">ATENXA 0.1.0-alpha ドキュメント</a></li>
-          <li class="md-tabs__item"><a href="../reference.html" class="md-tabs__link">ATENXA APIリファレンス</a></li>
       </ul>
     </div>
   </nav>
@@ -186,43 +183,15 @@
     <li class="md-nav__item">
     
     
+      <a href="../tutorial/index.html" class="md-nav__link">チュートリアル</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
       <a href="../reference.html" class="md-nav__link">ATENXA APIリファレンス</a>
-      <ul class="md-nav__list"> 
-    <li class="md-nav__item">
-    
-    
-      <a href="../reference.html#module-atenxa" class="md-nav__link">atenxa Package</a>
-      <ul class="md-nav__list"> 
-    <li class="md-nav__item">
-    
-    
-      <a href="../reference.html#functions" class="md-nav__link">Functions</a>
       
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../reference.html#classes" class="md-nav__link">Classes</a>
-      
-    
-    </li></ul>
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../reference.html#module-atenxa.sprite" class="md-nav__link">atenxa.sprite Package</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="../reference.html#module-atenxa.meter" class="md-nav__link">atenxa.meter Package</a>
-      
-    
-    </li></ul>
     
     </li>
     <li class="md-nav__item">
@@ -273,40 +242,6 @@
             
   
 <h1 id="api-atenxa-baseevent--page-root">BaseEvent<a class="headerlink" href="#api-atenxa-baseevent--page-root" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<dl class="py class">
-<dt id="atenxa.BaseEvent">
-<em class="property">class </em><code class="sig-prename descclassname">atenxa.</code><code class="sig-name descname">BaseEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">callback</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="n">userid</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">obj</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/richevent.html#BaseEvent"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#atenxa.BaseEvent" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>ATENXA式イベントのベースクラス</p>
-<p>このクラス自体はイベントとしての機能はありません。</p>
-<p class="rubric">Methods Summary</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%"/>
-<col style="width: 90%"/>
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#atenxa.BaseEvent.exec" title="atenxa.BaseEvent.exec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exec</span></code></a>()</p></td>
-<td><p>コールバック関数を実行します。</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#atenxa.BaseEvent.kill" title="atenxa.BaseEvent.kill"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kill</span></code></a>()</p></td>
-<td><p>このイベントを削除します。</p></td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods Documentation</p>
-<dl class="py method">
-<dt id="atenxa.BaseEvent.exec">
-<code class="sig-name descname">exec</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/richevent.html#BaseEvent.exec"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#atenxa.BaseEvent.exec" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>コールバック関数を実行します。</p>
-<p>イベントハンドラから呼び出されます。</p>
-</dd></dl>
-<dl class="py method">
-<dt id="atenxa.BaseEvent.kill">
-<code class="sig-name descname">kill</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/richevent.html#BaseEvent.kill"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#atenxa.BaseEvent.kill" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>このイベントを削除します。</p>
-</dd></dl>
-</dd></dl>
 
 
 
@@ -319,30 +254,6 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="atenxa.AfterEvent.html" title="AfterEvent"
-               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
-               rel="prev">
-              <div class="md-flex__cell md-flex__cell--shrink">
-                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-              </div>
-              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-                <span class="md-flex__ellipsis">
-                  <span
-                      class="md-footer-nav__direction"> Previous </span> AfterEvent </span>
-              </div>
-            </a>
-          
-          
-            <a href="atenxa.TimerEvent.html" title="TimerEvent"
-               class="md-flex md-footer-nav__link md-footer-nav__link--next"
-               rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
-                class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> TimerEvent </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink"><i
-                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
           
         </a>
         

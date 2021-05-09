@@ -1,109 +1,105 @@
 # -*- coding: utf-8 -*-
-"""
-ATENXA制御踏切
+"""ATENXA踏切システム
 
 簡単な組み込みとリアルな動作が特長の踏切制御パッケージです。
-"""
-import vrmapi
-from atenxa.basis import printLOG
 
-class Crossing(object):
-    """
-    踏切制御装置。
+踏切を構成する部品とセンサーのイベントハンドラに1行ずつ記述するとセットアップ完了です。
+"""
+# import vrmapi
+from atenxa.basis import printLOG, pprintLOG, ATENXAError
+from atenxa.richevent import richevent as _richevent
+
+from ._core import crossing_group as _crossing_group
+from ._core import setup_hub as _setup_hub
+
+def activate(obj, ev, param, group, rev=False, delay=0.0):
+    """踏切部品をアクティベート
+    
+    踏切部品をatenxa踏切システムで有効化します。
+    踏切部品のイベントハンドラに書き込みます。
 
     Args:
-        name (str, optional): 踏切グループに付ける名前
+        obj: 踏切オブジェクトまたはそのID
+        ev: イベントハンドラに渡されたイベント種別
+        param: イベントハンドラに渡されたイベントパラメータ
+        group (int or str): 踏切のグループ番号 or 名前
+        rev (default=False): 方向表示機を逆転するならTrue
+        delay (default=0.0): 遮断機の動作遅延時間(秒)
+
+    グループ番号またはグループ名は，
+
+    Example:
+        「ねこ踏切」の遮断機部品で，警報機の鳴動から1.5秒後に遮断を開始します。
+
+        >>> import atenxa.crossing as atx
+        >>> def vrmevent_xx(obj,ev,param):
+        ...     atx.activate(obj,ev,param, group='nekofumikiri', delay=1.5)
+
     """
-    _unique_num = 0
+    # ATENXA式イベントシステムを有効化
+    _richevent(obj,ev,param)
 
-    def __init__(self, name=None):
-        if name is None:
-            self.name = "crs{}".format(Crossing._unique_num)
-        else:
-            self.name = str(name)
-        self.members = []           #: list of tuple (obj, rev, delay)
-        self.approach = {1:0, 0:0}
-        Crossing._unique_num += 1
+    if ev == 'init':
+        try:
+            _crossing_group[group].addmember(obj,rev,delay)
+        except KeyError:
+            _setup_hub(group)
+            _crossing_group[group].addmember(obj,rev,delay)
 
-    def addmember(self, obj, rev=False, delay=0.0):
-        """踏切部品を追加
-        
-        Args:
-            obj: 踏切オブジェクトまたはそのID
-            rev (bool, optional): 方向表示機を逆転するときTrue, デフォルトはFalse
-            delay (float, optional): 閉じるときの動作を遅延するときの時間 [秒]
-        """
-        if type(obj) == vrmapi.VRMCrossing:
-            pass
-        elif type(obj) == type(0):
-            obj = vrmapi.LAYOUT().GetCrossing(obj)
-        else:
-            raise TypeError('objは踏切オブジェクトかそのID(int)でなければなりません。')
-        if delay < 0.0:
-            raise ValueError('delay(動作遅延時間)は0以上の実数値でなければなりません。')
-        self.members.append((obj, rev, delay))
+def activate_close(obj, ev, param, group, direction):
+    """センサー通過で踏切を閉じる
 
-    def addmembers(self, objects, rev=False, delay=0.0):
-        """踏切部品をまとめて追加
-        
-        Args:
-            objects: 踏切オブジェクトまたはそのIDのリスト
-            rev (bool, optional): 方向表示機を逆転するときTrue, デフォルトはFalse
-            delay (float, optional): 閉じるときの動作を遅延するときの時間 [秒]
-        """
-        for obj in objects:
-            self.addmember(obj, rev=rev, delay=delay)
+    atenxa踏切システムの踏切を閉じる指令を送ります。
+    センサー部品のイベントハンドラに書き込みます。
 
-    def register_sensor(self, sensor, direc, passed=False):
-        """センサーを踏切制御専用に引当て
-        
-        引当てられたセンサーはATENXA側でイベントハンドラを上書きするので、
-        デフォルトのイベントハンドラは無効となり、
-        他の制御との兼用はできなくなります。
-        他の踏切の制御センサーと兼用させることもできません。
+    Args:
+        obj: センサーオブジェクト
+        ev: イベントハンドラに渡されたイベント種別
+        param: イベントハンドラに渡されたイベントパラメータ
+        group (int or str): 踏切のグループ番号 or 名前
+        direction: 踏切に対するセンサーの向き(1 or 2)
+    
+    Example: 
+        「ねこ踏切」を閉じます。
 
-        Args:
-            sensor: センサーオブジェクトまたはそのID
-            dir (1 or 2): 踏切に対するセンサーの向き
-            passed (bool): 通過後センサーに対してTrue
-        """
-        if type(sensor) == vrmapi.VRMATS:
-            pass
-        elif type(sensor) == type(0):
-            sensor = vrmapi.LAYOUT().GetATS(sensor)
-        else:
-            raise TypeError('objは自動センサーオブジェクトかそのID(int)でなければなりません。')
+        >>> import atenxa.crossing as atx
+        >>> def vrmevent_xx(obj,ev,param):
+        ...     atx.activate(obj,ev,param, group='nekofumikiri', delay=1.5)
 
-        if type(direc) != type(0):
-            raise TypeError('direc')
-        elif direc not in {1,2}:
-            raise ValueError("'direc'が{}でしたが正しくは1か2です。".format(direc))
-
-        atsmd = sensor.GetDict()
-        atsmd['atenxa.crossing.target'] = self
-        atsmd['atenxa.crossing.direction'] = direc
-        printLOG('UserEventFunction:')
-        sensor.SetUserEventFunction('atenxa.crossing.sensor_approach')
-        printLOG('Set OK?')
-
-    def register_sensors(self, sensors, direc, passed=False):
-        raise NotImplementedError('register_sensors is not implemented yet.')
-
-def sensor_approach(obj, ev, param):
-    """接近センサー用イベントハンドラ"""
+    """
     if ev == 'catch':
-        md = obj.GetDict()
-        crs = md['atenxa.crossing.target']
-        direc = md['atenxa.crossing.direction']
-        crs.approach(direc)
-        printLOG('Test: Catched Train')
-    elif ev == 'init':
-        printLOG('Test: UserEventFunction set OK.')
+        if param['dir'] == 1:
+            try:
+                g = _crossing_group[group]
+            except KeyError:
+                raise ValueError("group名が不正です ({}).".format(group))
+            g.approach(direction)
 
-def sensor_passed(obj, ev, param):
-    """通貨センサー用イベントハンドラ"""
+def activate_open(obj, ev, param, group, direction):
+    """センサー通過で踏切を閉じる
+
+    atenxa踏切システムの踏切を閉じる指令を送ります。
+    センサー部品のイベントハンドラに書き込みます。
+
+    Args:
+        obj: センサーオブジェクト
+        ev: イベントハンドラに渡されたイベント種別
+        param: イベントハンドラに渡されたイベントパラメータ
+        group (int or str): 踏切のグループ番号 or 名前
+        direction: 踏切に対するセンサーの向き(1 or 2)
+    
+    Example: 
+        「ねこ踏切」を閉じます。
+
+        >>> import atenxa.crossing as atx
+        >>> def vrmevent_xx(obj,ev,param):
+        ...     atx.activate(obj,ev,param, group='nekofumikiri', delay=1.5)
+
+    """
     if ev == 'catch':
-        md = obj.GetDict()
-        crs = md['atenxa.crossing.target']
-        direc = md['atenxa.crossing.direction']
-        crs.passed(direc)
+        if param['dir'] == 1:
+            try:
+                g = _crossing_group[group]
+            except KeyError:
+                raise ValueError("group名が不正です ({}).".format(group))
+            g.passed(direction)

@@ -12,10 +12,11 @@ __author__ =  'AKAGI Rails'
 _DEBUG = True # デバッグモード
 
 from .basis import *
-from .richevent import *
+#from .richevent import *
 #from sprite import *
 
 #__all__ = ['basis', 'richevent']
 
 def sensor_approach(obj,ev,param):
     printLOG('Tmp User Handler.')
+    
