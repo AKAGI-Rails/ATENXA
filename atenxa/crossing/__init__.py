@@ -6,7 +6,8 @@
 踏切を構成する部品とセンサーのイベントハンドラに1行ずつ記述するとセットアップ完了です。
 """
 # import vrmapi
-from atenxa.basis import printLOG, pprintLOG, ATENXAError
+from atenxa.basis import printLOG, pprintLOG
+from atenxa.basis import ATENXAError
 from atenxa.richevent import richevent as _richevent
 
 from ._core import crossing_group as _crossing_group

@@ -11,7 +11,10 @@ AfterEvent, TimerEventのコンストラクタで `obj` 属性をレイアウト
 当該オブジェクトのイベントハンドラにもrichevent関数を記述する必要があります。
 """
 import vrmapi
-from . import _DEBUG
+#from . import _DEBUG
+_DEBUG = False
+if _DEBUG:
+    from . import printLOG as _printLOG
 
 _LAYOUT = vrmapi.LAYOUT()
 _register = {}
@@ -37,8 +40,8 @@ def richevent(obj, ev, param):
     evid = param['eventid']
     if evid in _register:
         if _DEBUG:
-            #LOG(evid, param)
-            pass
+            _printLOG(evid, param)
+            #pass
         return _register[evid].exec()
 
 def kill_event(evid):
