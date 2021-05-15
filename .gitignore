@@ -1,3 +1,4 @@
+/.vscode
 *.bak
 NXACC.dat
 __pycache__
@@ -6,6 +7,7 @@ __pycache__
 /vrmapi.py
 /make.bat
 /Makefile
+/docs-src/conf.py
 
 /example
 !/example/crossing.vrmnx

@@ -20,9 +20,22 @@ atenxaフォルダをそのままコピーするのが典型的な方法です�
 └ yourlayout.vrmnx
 ```
 
+ATENXAのバージョンが競合しないよう，レイアウトスクリプトで以下のようにセットアップすることを推奨します。
+
+```python
+#LAYOUT
+import vrmapi
+
+# レイアウトと同じディレクトリのpythonスクリプトを優先的にインポートする
+import os, sys
+sys.path.insert(0, os.path.abspath(vrmapi.SYSTEM().GetLayoutDir()))
+
+def vrmevent(obj,ev,param):
+    pass
+
 ## サンプル
 
-`example` フォルダにサンプルがあります。
+exampleフォルダにサンプルがあります。
 相対パスで `atenxa` パッケージをインポートしている関係で，
 
 - ATENXA/atenxa
