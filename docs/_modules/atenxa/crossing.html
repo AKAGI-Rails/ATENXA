@@ -282,7 +282,8 @@
 <span class="sd">踏切を構成する部品とセンサーのイベントハンドラに1行ずつ記述するとセットアップ完了です。</span>
 <span class="sd">"""</span>
 <span class="c1"># import vrmapi</span>
-<span class="kn">from</span> <span class="nn">atenxa.basis</span> <span class="kn">import</span> <span class="n">printLOG</span><span class="p">,</span> <span class="n">pprintLOG</span><span class="p">,</span> <span class="n">ATENXAError</span>
+<span class="c1">#from atenxa.basis import printLOG, pprintLOG</span>
+<span class="kn">from</span> <span class="nn">atenxa._basis</span> <span class="kn">import</span> <span class="n">ATENXAError</span>
 <span class="kn">from</span> <span class="nn">atenxa.richevent</span> <span class="kn">import</span> <span class="n">richevent</span> <span class="k">as</span> <span class="n">_richevent</span>
 
 <span class="kn">from</span> <span class="nn">._core</span> <span class="kn">import</span> <span class="n">crossing_group</span> <span class="k">as</span> <span class="n">_crossing_group</span>
@@ -299,17 +300,22 @@
 <span class="sd">        ev: イベントハンドラに渡されたイベント種別</span>
 <span class="sd">        param: イベントハンドラに渡されたイベントパラメータ</span>
 <span class="sd">        group (int or str): 踏切のグループ番号 or 名前</span>
-<span class="sd">        rev (default=False): 方向表示機を逆転するならTrue</span>
-<span class="sd">        delay (default=0.0): 遮断機の動作遅延時間(秒)</span>
+<span class="sd">        rev (bool, default=False): 方向表示機を逆転するならTrue</span>
+<span class="sd">        delay (float, default=0.0): 遮断機の動作遅延時間(秒)</span>
 
-<span class="sd">    グループ番号またはグループ名は，</span>
+<span class="sd">    グループ番号またはグループ名は，踏切ごとに一意のものを設定してください。</span>
+
+<span class="sd">    列車接近で踏切を閉じる際，センサーでの検知から当該部品の動作までに遅延時間を</span>
+<span class="sd">    設定する場合， `delay` 引数に秒数を設定してください。</span>
+<span class="sd">    省略した場合は，センサーの検知と同時に動作が開始します。</span>
+<span class="sd">    警報機が鳴り始めて数秒後に遮断機が閉まる，といった動作を設定できます。</span>
 
 <span class="sd">    Example:</span>
 <span class="sd">        「ねこ踏切」の遮断機部品で，警報機の鳴動から1.5秒後に遮断を開始します。</span>
 
 <span class="sd">        &gt;&gt;&gt; import atenxa.crossing as atx</span>
 <span class="sd">        &gt;&gt;&gt; def vrmevent_xx(obj,ev,param):</span>
-<span class="sd">        ...     atx.activate(obj,ev,param, group='nekofumikiri', delay=1.5)</span>
+<span class="sd">        ...     atx.activate(obj,ev,param, 'neko', delay=1.5)</span>
 
 <span class="sd">    """</span>
     <span class="c1"># ATENXA式イベントシステムを有効化</span>
@@ -317,16 +323,16 @@
 
     <span class="k">if</span> <span class="n">ev</span> <span class="o">==</span> <span class="s1">'init'</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">_crossing_group</span><span class="p">[</span><span class="n">group</span><span class="p">]</span><span class="o">.</span><span class="n">addmember</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">rev</span><span class="p">,</span><span class="n">delay</span><span class="p">)</span>
+            <span class="n">g</span> <span class="o">=</span> <span class="n">_crossing_group</span><span class="p">[</span><span class="n">group</span><span class="p">]</span>
         <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-            <span class="n">_setup_hub</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
-            <span class="n">_crossing_group</span><span class="p">[</span><span class="n">group</span><span class="p">]</span><span class="o">.</span><span class="n">addmember</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">rev</span><span class="p">,</span><span class="n">delay</span><span class="p">)</span></div>
+            <span class="n">g</span> <span class="o">=</span> <span class="n">_setup_hub</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+        <span class="n">g</span><span class="o">.</span><span class="n">addmember</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">rev</span><span class="p">,</span><span class="n">delay</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="activate_close"><a class="viewcode-back" href="../../api/atenxa.crossing.activate_close.html#atenxa.crossing.activate_close">[ドキュメント]</a><span class="k">def</span> <span class="nf">activate_close</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">ev</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">direction</span><span class="p">):</span>
     <span class="sd">"""センサー通過で踏切を閉じる</span>
 
 <span class="sd">    atenxa踏切システムの踏切を閉じる指令を送ります。</span>
-<span class="sd">    センサー部品のイベントハンドラに書き込みます。</span>
+<span class="sd">    センサーのイベントハンドラ直下に記述します。</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        obj: センサーオブジェクト</span>
@@ -340,7 +346,7 @@
 
 <span class="sd">        &gt;&gt;&gt; import atenxa.crossing as atx</span>
 <span class="sd">        &gt;&gt;&gt; def vrmevent_xx(obj,ev,param):</span>
-<span class="sd">        ...     atx.activate(obj,ev,param, group='nekofumikiri', delay=1.5)</span>
+<span class="sd">        ...     atx.activate(obj,ev,param, 'neko', delay=1.5)</span>
 
 <span class="sd">    """</span>
     <span class="k">if</span> <span class="n">ev</span> <span class="o">==</span> <span class="s1">'catch'</span><span class="p">:</span>
@@ -352,10 +358,10 @@
             <span class="n">g</span><span class="o">.</span><span class="n">approach</span><span class="p">(</span><span class="n">direction</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="activate_open"><a class="viewcode-back" href="../../api/atenxa.crossing.activate_open.html#atenxa.crossing.activate_open">[ドキュメント]</a><span class="k">def</span> <span class="nf">activate_open</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">ev</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">direction</span><span class="p">):</span>
-    <span class="sd">"""センサー通過で踏切を閉じる</span>
+    <span class="sd">"""踏切からの列車退出を検出</span>
 
-<span class="sd">    atenxa踏切システムの踏切を閉じる指令を送ります。</span>
-<span class="sd">    センサー部品のイベントハンドラに書き込みます。</span>
+<span class="sd">    atenxa踏切システムに，列車が踏切から退出したことを知らせます。</span>
+<span class="sd">    踏切に残った編成がいなくなれば踏切を開放します。</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        obj: センサーオブジェクト</span>
@@ -365,11 +371,12 @@
 <span class="sd">        direction: 踏切に対するセンサーの向き(1 or 2)</span>
 <span class="sd">    </span>
 <span class="sd">    Example: </span>
-<span class="sd">        「ねこ踏切」を閉じます。</span>
+<span class="sd">        「ねこ踏切」からの退出を検出します。</span>
+<span class="sd">        センサーのイベントハンドラ直下に記述します。</span>
 
 <span class="sd">        &gt;&gt;&gt; import atenxa.crossing as atx</span>
 <span class="sd">        &gt;&gt;&gt; def vrmevent_xx(obj,ev,param):</span>
-<span class="sd">        ...     atx.activate(obj,ev,param, group='nekofumikiri', delay=1.5)</span>
+<span class="sd">        ...     atx.activate(obj,ev,param, 'neko')</span>
 
 <span class="sd">    """</span>
     <span class="k">if</span> <span class="n">ev</span> <span class="o">==</span> <span class="s1">'catch'</span><span class="p">:</span>

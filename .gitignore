@@ -1,4 +1,5 @@
 *.bak
+NXACC.dat
 __pycache__
 /.vs
 /archive
