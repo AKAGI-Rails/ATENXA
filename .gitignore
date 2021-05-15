@@ -3,6 +3,7 @@
 NXACC.dat
 __pycache__
 /.vs
+/res
 /archive
 /vrmapi.py
 /make.bat
