@@ -14,12 +14,12 @@ VRMNXのPythonスクリプトに便利な機能を提供するパッケージで
 
 * 汎用の便利なログ出力
 * 便利な時間系イベントシステム
-
-計画中の機能
-
 * 簡単に組み込め、リアルに動作する踏切
 * 表示順入れ替えに対応するスプライトのラッパ
 * スプライトで動作する速度計
+
+計画中の機能
+
 * 自動運転
 * 閉塞・ATS
 
@@ -28,7 +28,7 @@ Download and Install
 
 ATENXAは下記のリンクからソースコードを配布しています。
 
-:download: `atenxa-0.1.0alpha.zip (--.-MB)` <atenxa-0.1.0alpha.zip>
+`ATENXAのダウンロード(zip) <https://github.com/AKAGI-Rails/ATENXA/archive/refs/heads/master.zip>`_
 
 
 アーカイブ内の``atenxa``フォルダを、そのままお使いのレイアウトと同じフォルダ内にコピーしてください。

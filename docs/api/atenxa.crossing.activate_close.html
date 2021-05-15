@@ -310,7 +310,7 @@
 <code class="sig-prename descclassname">atenxa.crossing.</code><code class="sig-name descname">activate_close</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em>, <em class="sig-param"><span class="n">ev</span></em>, <em class="sig-param"><span class="n">param</span></em>, <em class="sig-param"><span class="n">group</span></em>, <em class="sig-param"><span class="n">direction</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/crossing.html#activate_close"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#atenxa.crossing.activate_close" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>センサー通過で踏切を閉じる</p>
 <p>atenxa踏切システムの踏切を閉じる指令を送ります。
-センサー部品のイベントハンドラに書き込みます。</p>
+センサーのイベントハンドラ直下に記述します。</p>
 <dl class="field-list simple">
 <dt class="field-odd">パラメータ</dt>
 <dd class="field-odd"><ul class="simple">
@@ -326,7 +326,7 @@
 <p>「ねこ踏切」を閉じます。</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">atenxa.crossing</span> <span class="k">as</span> <span class="nn">atx</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">vrmevent_xx</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">ev</span><span class="p">,</span><span class="n">param</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="n">atx</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">ev</span><span class="p">,</span><span class="n">param</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="s1">'nekofumikiri'</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">atx</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">ev</span><span class="p">,</span><span class="n">param</span><span class="p">,</span> <span class="s1">'neko'</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>

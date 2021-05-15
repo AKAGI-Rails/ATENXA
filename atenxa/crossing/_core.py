@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """ATENXA踏切システムのコア"""
 import vrmapi
-from atenxa.basis import printLOG
+from atenxa._basis import printLOG
 from atenxa.richevent import AfterEvent
 
 crossing_group = dict()
@@ -18,8 +18,10 @@ def setup_hub(group):
         name = group
     else:
         raise TypeError("groupの型が不正です。 {}".format(group))
-    crossing_group[group] = CrossingHub(name)
+    g = CrossingHub(name)
+    crossing_group[group] = g
     printLOG('[atenxa.crossing] Group {} setup OK.'.format(group))
+    return g
 
 class CrossingHub(object):
     """

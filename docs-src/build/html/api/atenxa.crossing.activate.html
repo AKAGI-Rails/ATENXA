@@ -318,17 +318,21 @@
 <li><p><strong>ev</strong> -- イベントハンドラに渡されたイベント種別</p></li>
 <li><p><strong>param</strong> -- イベントハンドラに渡されたイベントパラメータ</p></li>
 <li><p><strong>group</strong> (<em>int</em><em> or </em><em>str</em>) -- 踏切のグループ番号 or 名前</p></li>
-<li><p><strong>rev</strong> (<em>default=False</em>) -- 方向表示機を逆転するならTrue</p></li>
-<li><p><strong>delay</strong> (<em>default=0.0</em>) -- 遮断機の動作遅延時間(秒)</p></li>
+<li><p><strong>rev</strong> (<em>bool</em><em>, </em><em>default=False</em>) -- 方向表示機を逆転するならTrue</p></li>
+<li><p><strong>delay</strong> (<em>float</em><em>, </em><em>default=0.0</em>) -- 遮断機の動作遅延時間(秒)</p></li>
 </ul>
 </dd>
 </dl>
-<p>グループ番号またはグループ名は，</p>
+<p>グループ番号またはグループ名は，踏切ごとに一意のものを設定してください。</p>
+<p>列車接近で踏切を閉じる際，センサーでの検知から当該部品の動作までに遅延時間を
+設定する場合， <cite>delay</cite> 引数に秒数を設定してください。
+省略した場合は，センサーの検知と同時に動作が開始します。
+警報機が鳴り始めて数秒後に遮断機が閉まる，といった動作を設定できます。</p>
 <p class="rubric">サンプル</p>
 <p>「ねこ踏切」の遮断機部品で，警報機の鳴動から1.5秒後に遮断を開始します。</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">atenxa.crossing</span> <span class="k">as</span> <span class="nn">atx</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">vrmevent_xx</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">ev</span><span class="p">,</span><span class="n">param</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="n">atx</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">ev</span><span class="p">,</span><span class="n">param</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="s1">'nekofumikiri'</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">atx</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">ev</span><span class="p">,</span><span class="n">param</span><span class="p">,</span> <span class="s1">'neko'</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
