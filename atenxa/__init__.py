@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""ATENXA - Advanced Tools for Enhancing VRMNX by Akagi
+"""ATENXA - Advanced Toolkit for Enhancing VRMNX by Akagi
 
 VRMNXの機能を拡張する，シンプル・使いやすい・リアルなツールキットです。
 
