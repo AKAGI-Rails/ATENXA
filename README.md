@@ -9,6 +9,10 @@ VRMNXpyの，シンプル・使いやすい・リアルな拡張です。
 
 ## インストール
 
+このリポジトリのZipは以下リンクからダウンロードできます。
+
+[リポジトリをZipでダウンロード](https://github.com/AKAGI-Rails/ATENXA/archive/refs/heads/master.zip)
+
 ATENXAを使用するレイアウトと同じディレクトリに，
 atenxaフォルダをそのままコピーするのが典型的な方法です。
 
@@ -30,8 +34,11 @@ import vrmapi
 import os, sys
 sys.path.insert(0, os.path.abspath(vrmapi.SYSTEM().GetLayoutDir()))
 
+import atenxa
+
 def vrmevent(obj,ev,param):
     pass
+```
 
 ## サンプル
 

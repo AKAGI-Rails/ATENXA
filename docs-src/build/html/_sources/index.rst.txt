@@ -26,7 +26,7 @@ VRMNXのPythonスクリプトに便利な機能を提供するパッケージで
 Download and Install
 ====================
 
-ATENXAは下記のリンクからソースコードを配布しています。
+ATENXAは下記のリンクからGitHubリポジトリの中身をZipで配布しています。
 
 `ATENXAのダウンロード(zip) <https://github.com/AKAGI-Rails/ATENXA/archive/refs/heads/master.zip>`_
 
@@ -40,6 +40,21 @@ ATENXAは下記のリンクからソースコードを配布しています。
     │  ├ __init__.py
     │  └ ...
     └─ YourLayout.vrmnx
+
+
+ATENXAのバージョンが競合しないよう，レイアウトスクリプトで以下のようにセットアップすることを推奨します。::
+
+   #LAYOUT
+   import vrmapi
+
+   # レイアウトと同じディレクトリのpythonスクリプトを優先的にインポートする
+   import os, sys
+   sys.path.insert(0, os.path.abspath(vrmapi.SYSTEM().GetLayoutDir()))
+
+   import atenxa
+
+   def vrmevent(obj,ev,param):
+      pass
 
 これでお使いのレイアウトから ``import atenxa`` できるようになります。
 
