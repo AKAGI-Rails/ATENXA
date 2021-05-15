@@ -67,6 +67,7 @@ ATENXAのバージョンが競合しないよう，レイアウトスクリプ�
    quickstart
    tutorial/index
    reference
+   history
 
 
 .. toctree::

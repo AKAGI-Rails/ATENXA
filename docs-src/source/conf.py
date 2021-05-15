@@ -18,11 +18,11 @@ sys.path.insert(0, os.path.abspath('../../'))
 # -- Project information -----------------------------------------------------
 
 project = 'ATENXA'
-copyright = '2020, AKAGI Rails'
+copyright = '2021, AKAGI Rails'
 author = 'AKAGI Rails'
 
 # The full version, including alpha/beta/rc tags
-release = '1.0.0 RC1'
+release = '1.0.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -98,7 +98,7 @@ html_theme_options = {
     'logo_icon': 'subway',
 
     # Set the repo location to get a badge with stats
-    'repo_url': 'https://github.com/AKAGI-Rails/vrmnx-toruo',
+    'repo_url': 'https://github.com/AKAGI-Rails/ATENXA',
     'repo_name': 'ATENXA for VRMNX',
 
     # Visible levels of the global TOC; -1 means unlimited
