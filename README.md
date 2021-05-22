@@ -1,4 +1,4 @@
-# ATENXA - simple & powerful toolkit extends VRMNX
+# ATENXA - simple & powerful toolkit for VRMNX
 
 VRMNXpyの，シンプル・使いやすい・リアルな拡張です。
 使いやすいイベントシステムや踏切制御などを提供します。

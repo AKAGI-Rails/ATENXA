@@ -10,7 +10,7 @@
    :align: center
    :alt: ATENXA - Advanced Toolkit for Enhancing VRMNX by AKAGI
 
-ATENXA - Advanced Tools for Enhancing VRMNX by Akagi は
+ATENXA (アテンザ) は，
 VRMNXのPythonスクリプトに便利な機能を提供するパッケージです。
 
 主要な機能
