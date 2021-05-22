@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-.. ATENXA for VRMNX
-   ================
+ATENXA for VRMNX
+================
 
 .. image:: img/atenxa.png
    :align: center
