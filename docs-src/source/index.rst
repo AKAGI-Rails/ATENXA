@@ -3,8 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-ATENXA for VRMNX
-================
+.. ATENXA for VRMNX
+   ================
+
+.. image:: img/atenxa.png
+   :align: center
+   :alt: ATENXA - Advanced Toolkit for Enhancing VRMNX by AKAGI
 
 ATENXA - Advanced Tools for Enhancing VRMNX by Akagi は
 VRMNXのPythonスクリプトに便利な機能を提供するパッケージです。
@@ -33,7 +37,7 @@ ATENXAは下記のリンクからGitHubリポジトリの中身をZipで配布�
 
 アーカイブ内の``atenxa``フォルダを、そのままお使いのレイアウトと同じフォルダ内にコピーしてください。
 
-::
+.. code-block:: none
 
    (root)
     ├─ atenxa
@@ -42,7 +46,11 @@ ATENXAは下記のリンクからGitHubリポジトリの中身をZipで配布�
     └─ YourLayout.vrmnx
 
 
-ATENXAのバージョンが競合しないよう，レイアウトスクリプトで以下のようにセットアップすることを推奨します。::
+ATENXAのバージョンが競合しないよう，レイアウトスクリプトで以下のようにセットアップすることを推奨します。
+
+.. code-block:: python
+   :linenos:
+   :caption: レイアウトスクリプト
 
    #LAYOUT
    import vrmapi

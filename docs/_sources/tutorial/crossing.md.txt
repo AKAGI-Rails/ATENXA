@@ -27,7 +27,7 @@ import vrmapi
 
 # 同一ディレクトリのパッケージを優先で読み込む設定
 import os, sys
-sys.path.insert(0, os.path.abspath(vrmapi.SYSTEM().GetLayoutDir()))
+sys.path.insert(0, vrmapi.SYSTEM().GetLayoutDir())
 
 # atenxaのcrossingサブパッケージを，atxという短縮名称でインポート
 # 以後，他のオブジェクトのスクリプトからもatxという名前で使えます。
