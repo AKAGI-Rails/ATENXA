@@ -11,7 +11,7 @@ Example:
     リソース画像は別途登録しておいてください。
     
     >>> def vrmevent_xx(obj, ev, param):
-    ...     atenxa.meter.activate(obj, ev, param, atenxa.simple.MeterSimple, 1)
+    ...     atenxa.meter.activate(obj, ev, param, atenxa.meter.MeterSimple, 1)
 
 """
 
@@ -35,7 +35,7 @@ def activate(train, ev, param, MeterClass, res, layoutres=False):
         train.SetEventFrame()
         meter = MeterClass(train, res, layoutres)
         td['ATENXA.Meter'] = meter
-        return meter
+        #return meter
     elif ev == 'frame':
         meter = td['ATENXA.Meter']
         meter._frame()
@@ -95,6 +95,5 @@ class MeterBase(object):
         対象の編成が操作対象かつ表示対象のときのみframeイベント内でコールされます。
         """
         pass
-
 
 from .simple import MeterSimple
