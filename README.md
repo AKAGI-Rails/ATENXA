@@ -32,7 +32,7 @@ import vrmapi
 
 # レイアウトと同じディレクトリのpythonスクリプトを優先的にインポートする
 import os, sys
-sys.path.insert(0, os.path.abspath(vrmapi.SYSTEM().GetLayoutDir()))
+sys.path.insert(0, vrmapi.SYSTEM().GetLayoutDir())
 
 import atenxa
 
