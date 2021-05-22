@@ -7,8 +7,11 @@ ATENXA APIリファレンス
 .. automodapi:: atenxa.crossing
     :no-inheritance-diagram:
 
-.. automodapi:: atenxa.sprite
+.. automodapi:: atenxa.meter
     :no-inheritance-diagram:
 
-.. automodapi:: atenxa.meter
+.. automodapi:: atenxa.richevent
+    :no-inheritance-diagram:
+
+.. automodapi:: atenxa.sprite
     :no-inheritance-diagram:

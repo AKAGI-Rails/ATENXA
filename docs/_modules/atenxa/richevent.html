@@ -41,12 +41,12 @@
   
   <link rel="stylesheet" href="../../_static/fonts/material-icons.css"/>
   
-  <meta name="theme-color" content="b92929">
+  <meta name="theme-color" content="3f51b5">
   <script src="../../_static/javascripts/modernizr.js"></script>
   
   
   
-    <title>atenxa.richevent &#8212; ATENXA 0.1.0-alpha ドキュメント</title>
+    <title>atenxa.richevent &#8212; ATENXA 1.0.0 ドキュメント</title>
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/material.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
@@ -80,7 +80,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../index.html" title="ATENXA 0.1.0-alpha ドキュメント"
+        <a href="../../index.html" title="ATENXA 1.0.0 ドキュメント"
            class="md-header-nav__button md-logo">
           
             <i class="md-icon">subway</i>
@@ -126,6 +126,23 @@
 
       </div>
       
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            <a href="https://github.com/AKAGI-Rails/ATENXA" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    ATENXA for VRMNX
+  </div>
+</a>
+          </div>
+        </div>
+      
       
   
   <script src="../../_static/javascripts/version_dropdown.js"></script>
@@ -149,7 +166,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">ATENXA 0.1.0-alpha ドキュメント</a></li>
+          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">ATENXA 1.0.0 ドキュメント</a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">モジュールコード</a></li>
           <li class="md-tabs__item"><a href="../atenxa.html" class="md-tabs__link">atenxa</a></li>
       </ul>
@@ -163,14 +180,29 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../index.html" title="ATENXA 0.1.0-alpha ドキュメント" class="md-nav__button md-logo">
+    <a href="../../index.html" title="ATENXA 1.0.0 ドキュメント" class="md-nav__button md-logo">
       
         <i class="md-icon">subway</i>
       
     </a>
     <a href="../../index.html"
-       title="ATENXA 0.1.0-alpha ドキュメント">ATENXA</a>
+       title="ATENXA 1.0.0 ドキュメント">ATENXA</a>
   </label>
+    <div class="md-nav__source">
+      <a href="https://github.com/AKAGI-Rails/ATENXA" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    ATENXA for VRMNX
+  </div>
+</a>
+    </div>
+  
   
 
   
@@ -185,7 +217,21 @@
     <li class="md-nav__item">
     
     
+      <a href="../../tutorial/index.html" class="md-nav__link">チュートリアル</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
       <a href="../../reference.html" class="md-nav__link">ATENXA APIリファレンス</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../history.html" class="md-nav__link">リリースノート</a>
       
     
     </li>
@@ -248,12 +294,15 @@
 <span class="sd">当該オブジェクトのイベントハンドラにもrichevent関数を記述する必要があります。</span>
 <span class="sd">"""</span>
 <span class="kn">import</span> <span class="nn">vrmapi</span>
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_DEBUG</span>
+<span class="c1">#from . import _DEBUG</span>
+<span class="n">_DEBUG</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">if</span> <span class="n">_DEBUG</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">printLOG</span> <span class="k">as</span> <span class="n">_printLOG</span>
 
 <span class="n">_LAYOUT</span> <span class="o">=</span> <span class="n">vrmapi</span><span class="o">.</span><span class="n">LAYOUT</span><span class="p">()</span>
 <span class="n">_register</span> <span class="o">=</span> <span class="p">{}</span>
 
-<div class="viewcode-block" id="richevent"><a class="viewcode-back" href="../../api/atenxa.richevent.html#atenxa.richevent">[ドキュメント]</a><span class="k">def</span> <span class="nf">richevent</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">ev</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+<div class="viewcode-block" id="richevent"><a class="viewcode-back" href="../../api/atenxa.richevent.richevent.html#atenxa.richevent.richevent">[ドキュメント]</a><span class="k">def</span> <span class="nf">richevent</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">ev</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
     <span class="sd">"""ATENXA式イベントを有効化。</span>
 <span class="sd">    </span>
 <span class="sd">    イベントハンドラの直下で呼び出します。</span>
@@ -274,11 +323,11 @@
     <span class="n">evid</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="s1">'eventid'</span><span class="p">]</span>
     <span class="k">if</span> <span class="n">evid</span> <span class="ow">in</span> <span class="n">_register</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">_DEBUG</span><span class="p">:</span>
-            <span class="c1">#LOG(evid, param)</span>
-            <span class="k">pass</span>
+            <span class="n">_printLOG</span><span class="p">(</span><span class="n">evid</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+            <span class="c1">#pass</span>
         <span class="k">return</span> <span class="n">_register</span><span class="p">[</span><span class="n">evid</span><span class="p">]</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="kill_event"><a class="viewcode-back" href="../../api/atenxa.kill_event.html#atenxa.kill_event">[ドキュメント]</a><span class="k">def</span> <span class="nf">kill_event</span><span class="p">(</span><span class="n">evid</span><span class="p">):</span>
+<div class="viewcode-block" id="kill_event"><a class="viewcode-back" href="../../api/atenxa.richevent.kill_event.html#atenxa.richevent.kill_event">[ドキュメント]</a><span class="k">def</span> <span class="nf">kill_event</span><span class="p">(</span><span class="n">evid</span><span class="p">):</span>
     <span class="sd">"""ATENXA式イベントをキャンセル。</span>
 <span class="sd">    </span>
 <span class="sd">    ATENXA式のイベントのみキャンセルできます。</span>
@@ -293,35 +342,38 @@
         <span class="n">vrmapi</span><span class="o">.</span><span class="n">LOG</span><span class="p">(</span><span class="s1">'[ATENXA.EVENT WARNING]不正なイベントID (ID </span><span class="si">{}</span><span class="s1">)'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">evid</span><span class="p">))</span>
     <span class="n">obj</span><span class="o">.</span><span class="n">ResetEvent</span><span class="p">(</span><span class="n">evid</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="BaseEvent"><a class="viewcode-back" href="../../api/atenxa.BaseEvent.html#atenxa.BaseEvent">[ドキュメント]</a><span class="k">class</span> <span class="nc">BaseEvent</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="BaseEvent"><a class="viewcode-back" href="../../api/atenxa.richevent.BaseEvent.html#atenxa.richevent.BaseEvent">[ドキュメント]</a><span class="k">class</span> <span class="nc">BaseEvent</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">"""ATENXA式イベントのベースクラス</span>
 <span class="sd">    </span>
 <span class="sd">    このクラス自体はイベントとしての機能はありません。</span>
 <span class="sd">    """</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">userid</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">userid</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">eventid</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>   <span class="c1"># システムのイベントID</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_callback</span> <span class="o">=</span> <span class="n">callback</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_args</span> <span class="o">=</span> <span class="n">args</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_args</span> <span class="o">=</span> <span class="n">args</span> <span class="k">if</span> <span class="n">args</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span> <span class="o">=</span> <span class="n">kwargs</span> <span class="k">if</span> <span class="n">kwargs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">userid</span> <span class="o">=</span> <span class="n">userid</span>    <span class="c1"># ユーザID</span>
         <span class="k">if</span> <span class="n">obj</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span> <span class="o">=</span> <span class="n">obj</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span> <span class="o">=</span> <span class="n">_LAYOUT</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span> <span class="o">=</span> <span class="n">kwargs</span>
 
-<div class="viewcode-block" id="BaseEvent.exec"><a class="viewcode-back" href="../../api/atenxa.BaseEvent.html#atenxa.BaseEvent.exec">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">exec</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="BaseEvent.exec"><a class="viewcode-back" href="../../api/atenxa.richevent.BaseEvent.html#atenxa.richevent.BaseEvent.exec">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">exec</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">"""コールバック関数を実行します。</span>
 <span class="sd">        </span>
 <span class="sd">        イベントハンドラから呼び出されます。</span>
 <span class="sd">        """</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_callback</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_args</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="BaseEvent.kill"><a class="viewcode-back" href="../../api/atenxa.BaseEvent.html#atenxa.BaseEvent.kill">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">kill</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="BaseEvent.kill"><a class="viewcode-back" href="../../api/atenxa.richevent.BaseEvent.html#atenxa.richevent.BaseEvent.kill">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">kill</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">"""このイベントを削除します。"""</span>
         <span class="n">kill_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">eventid</span><span class="p">)</span></div></div>
 
-<div class="viewcode-block" id="AfterEvent"><a class="viewcode-back" href="../../api/atenxa.AfterEvent.html#atenxa.AfterEvent">[ドキュメント]</a><span class="k">class</span> <span class="nc">AfterEvent</span><span class="p">(</span><span class="n">BaseEvent</span><span class="p">):</span>
+<div class="viewcode-block" id="AfterEvent"><a class="viewcode-back" href="../../api/atenxa.richevent.AfterEvent.html#atenxa.richevent.AfterEvent">[ドキュメント]</a><span class="k">class</span> <span class="nc">AfterEvent</span><span class="p">(</span><span class="n">BaseEvent</span><span class="p">):</span>
     <span class="sd">""" 指定時間後に実行するATENXA式イベント</span>
+
+<span class="sd">    interval秒後に引数args，キーワード引数kwargsでcallbackを実行します。</span>
+<span class="sd">    args*がNoneなら空のリストが使用されます。</span>
 <span class="sd">    </span>
 <span class="sd">    Args:</span>
 <span class="sd">        interval: 時間(秒)</span>
@@ -334,7 +386,7 @@
 <span class="sd">    Example:</span>
 <span class="sd">        1.5秒後に編成オブジェクトtrnでSetTimerVoltage</span>
 
-<span class="sd">        &gt;&gt;&gt; AfterEvent(1.5, trn.SetTimerVoltage, 5.0, 0.2)</span>
+<span class="sd">        &gt;&gt;&gt; AfterEvent(1.5, trn.SetTimerVoltage, args=(5.0, 0.2))</span>
 
 <span class="sd">        指定時間になると次が実行されます。</span>
 
@@ -342,12 +394,13 @@
 
 <span class="sd">    callbackにはユーザーが定義した関数やクラスメソッドを与えることもできます。</span>
 <span class="sd">    """</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">callback</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">userid</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">callback</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">userid</span><span class="o">=</span><span class="n">userid</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="n">obj</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">callback</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">userid</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">callback</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">,</span> <span class="n">userid</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interval</span> <span class="o">=</span> <span class="n">interval</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">eventid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">SetEventAfter</span><span class="p">(</span><span class="n">interval</span><span class="p">,</span> <span class="n">userid</span><span class="p">)</span>    <span class="c1">#: システムが発行したイベントID</span>
         <span class="n">_register</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">eventid</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span>
 
-<div class="viewcode-block" id="AfterEvent.exec"><a class="viewcode-back" href="../../api/atenxa.AfterEvent.html#atenxa.AfterEvent.exec">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">exec</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="AfterEvent.exec"><a class="viewcode-back" href="../../api/atenxa.richevent.AfterEvent.html#atenxa.richevent.AfterEvent.exec">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">exec</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">"""コールバック関数を実行します。</span>
 <span class="sd">        </span>
 <span class="sd">        イベントハンドラから呼び出されます。</span>
@@ -359,7 +412,7 @@
         <span class="k">del</span> <span class="n">_register</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">eventid</span><span class="p">]</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_callback</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_args</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">)</span></div></div>
 
-<div class="viewcode-block" id="TimerEvent"><a class="viewcode-back" href="../../api/atenxa.TimerEvent.html#atenxa.TimerEvent">[ドキュメント]</a><span class="k">class</span> <span class="nc">TimerEvent</span><span class="p">(</span><span class="n">BaseEvent</span><span class="p">):</span>
+<div class="viewcode-block" id="TimerEvent"><a class="viewcode-back" href="../../api/atenxa.richevent.TimerEvent.html#atenxa.richevent.TimerEvent">[ドキュメント]</a><span class="k">class</span> <span class="nc">TimerEvent</span><span class="p">(</span><span class="n">BaseEvent</span><span class="p">):</span>
     <span class="sd">""" 指定時間毎に実行するATENXA式イベント</span>
 <span class="sd">    </span>
 <span class="sd">    Args:</span>
@@ -370,8 +423,8 @@
 <span class="sd">        userid (optional): ユーザID</span>
 <span class="sd">        obj (optional): イベント発生対象のオブジェクト。 (default=LAYOUT)</span>
 <span class="sd">    """</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">callback</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">userid</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">callback</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">userid</span><span class="o">=</span><span class="n">userid</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="n">obj</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">callback</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">userid</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">callback</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">,</span> <span class="n">userid</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">eventid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span><span class="o">.</span><span class="n">SetEventTimer</span><span class="p">(</span><span class="n">interval</span><span class="p">,</span> <span class="n">userid</span><span class="p">)</span>    <span class="c1">#: システムが発行したイベントID</span>
         <span class="n">_register</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">eventid</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span></div>
 
@@ -395,7 +448,7 @@
       <div class="md-footer-meta__inner md-grid">
         <div class="md-footer-copyright">
           <div class="md-footer-copyright__highlight">
-              &#169; Copyright 2020, AKAGI Rails.
+              &#169; Copyright 2021, AKAGI Rails.
               
           </div>
             Created using
