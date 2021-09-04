@@ -10,5 +10,6 @@ __pycache__
 /Makefile
 /docs-src/conf.py
 
-/example
+/example/*
 !/example/crossing.vrmnx
+!/example/meter_extension

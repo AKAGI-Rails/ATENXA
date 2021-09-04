@@ -30,15 +30,16 @@ class MeterSimple(MeterBase):
         # ここでnew_sprite()して基本的な設定をしておくとよい。
         # Spriteのインスタンスは好きな名前のクラス属性に突っ込んでください。
 
-        self.needle = self.new_sprite()
-        self.needle.SetUV(164,252, 256,256)
-        self.needle.SetTranslate(504,844)
+        #self.needle = self.new_sprite()
+        #self.needle.SetUV(164,252, 256,256)
+        #self.needle.SetTranslate(504,844)
         # 針の回転角度はdisplayメソッドで速度に基づいて計算。
 
-        self.meterbase = self.new_sprite()
-        self.meterbase.SetUV(0,0, 240,240)
-        self.meterbase.SetTranslate(384,724)
+        #self.meterbase = self.new_sprite()
+        #self.meterbase.SetUV(0,0, 240,240)
+        #self.meterbase.SetTranslate(384,724)
         #self.meterbase.SetColor(1,1,1,1)
+        pass
 
     def display(self):
         spd = self._train.GetSpeed()
