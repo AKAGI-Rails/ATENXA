@@ -314,15 +314,16 @@
         <span class="c1"># ここでnew_sprite()して基本的な設定をしておくとよい。</span>
         <span class="c1"># Spriteのインスタンスは好きな名前のクラス属性に突っ込んでください。</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">needle</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_sprite</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">needle</span><span class="o">.</span><span class="n">SetUV</span><span class="p">(</span><span class="mi">164</span><span class="p">,</span><span class="mi">252</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span><span class="mi">256</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">needle</span><span class="o">.</span><span class="n">SetTranslate</span><span class="p">(</span><span class="mi">504</span><span class="p">,</span><span class="mi">844</span><span class="p">)</span>
+        <span class="c1">#self.needle = self.new_sprite()</span>
+        <span class="c1">#self.needle.SetUV(164,252, 256,256)</span>
+        <span class="c1">#self.needle.SetTranslate(504,844)</span>
         <span class="c1"># 針の回転角度はdisplayメソッドで速度に基づいて計算。</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">meterbase</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_sprite</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">meterbase</span><span class="o">.</span><span class="n">SetUV</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span><span class="mi">240</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">meterbase</span><span class="o">.</span><span class="n">SetTranslate</span><span class="p">(</span><span class="mi">384</span><span class="p">,</span><span class="mi">724</span><span class="p">)</span></div>
+        <span class="c1">#self.meterbase = self.new_sprite()</span>
+        <span class="c1">#self.meterbase.SetUV(0,0, 240,240)</span>
+        <span class="c1">#self.meterbase.SetTranslate(384,724)</span>
         <span class="c1">#self.meterbase.SetColor(1,1,1,1)</span>
+        <span class="k">pass</span></div>
 
 <div class="viewcode-block" id="MeterSimple.display"><a class="viewcode-back" href="../../../api/atenxa.meter.MeterSimple.html#atenxa.meter.MeterSimple.display">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">spd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_train</span><span class="o">.</span><span class="n">GetSpeed</span><span class="p">()</span>

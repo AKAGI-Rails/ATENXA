@@ -7,3 +7,5 @@ NXACC.dat
 __pycache__
 
 /example/*
+
+/docs-src/_build
