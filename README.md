@@ -3,9 +3,18 @@
 VRMNXpyの，シンプル・使いやすい・リアルな拡張です。
 使いやすいイベントシステムや踏切制御などを提供します。
 
-詳細は，下記ページをチェックしてください。
+ATENXAの詳細は，下記ページをチェックしてください。
 
 [https://akagi-rails.github.io/ATENXA/](https://akagi-rails.github.io/ATENXA/)
+
+## VRMNXについて
+
+VRMNX（鉄道模型シミュレーターNX）は，I.MAGIC社開発の3DCG鉄道模型です。
+Pythonスクリプトによりさまざまなギミックをユーザーが組み込むことができます。
+
+VRMNX (Virtual Railroad Models NX) is developed by I.MAGIC.
+
+[VRMNX Official](http://www.imagic.co.jp/hobby/)
 
 ## インストール
 
