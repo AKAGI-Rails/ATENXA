@@ -1,15 +1,9 @@
 /.vscode
+/.vs
+
 *.bak
 NXACC.dat
+
 __pycache__
-/.vs
-/res
-/archive
-/vrmapi.py
-/make.bat
-/Makefile
-/docs-src/conf.py
 
 /example/*
-!/example/crossing.vrmnx
-!/example/meter_extension
