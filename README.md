@@ -12,11 +12,11 @@ ATENXAの詳細は，下記ページをチェックしてください。
 VRMNX（鉄道模型シミュレーターNX）は，I.MAGIC社開発の3DCG鉄道模型です。
 Pythonスクリプトによりさまざまなギミックをユーザーが組み込むことができます。
 
-VRMNX (Virtual Railroad Models NX) is developed by I.MAGIC.
+VRMNX (Virtual Railroad Models System NX) is developed by I.MAGIC. Japanese-only.
 
 [VRMNX Official](http://www.imagic.co.jp/hobby/)
 
-## インストール
+## ダウンロード & インストール
 
 このリポジトリのZipは以下リンクからダウンロードできます。
 
@@ -40,12 +40,13 @@ ATENXAのバージョンが競合しないよう，レイアウトスクリプ�
 import vrmapi
 
 # レイアウトと同じディレクトリのpythonスクリプトを優先的にインポートする
-import os, sys
+import sys
 sys.path.insert(0, vrmapi.SYSTEM().GetLayoutDir())
 
 import atenxa
 
 def vrmevent(obj,ev,param):
+    # (省略)
     pass
 ```
 
