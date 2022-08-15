@@ -71,3 +71,5 @@ def pprintLOG(object):
 class ATENXAError(Exception):
     """ATENXAシステムのエラー。"""
     pass
+
+
