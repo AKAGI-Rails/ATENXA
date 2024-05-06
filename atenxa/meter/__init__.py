@@ -19,7 +19,7 @@ from atenxa.sprite import Sprite
 
 __all__ = ['activate', 'MeterBase', 'MeterSimple']
 
-_trainmeter = {} #: key=trainid, value=MeterClassオブジェクト
+# _trainmeter = {} #: key=trainid, value=MeterClassオブジェクト
 
 def activate(train, ev, param, MeterClass, res, layoutres=False):
     """対象の編成で速度計スプライトを有効にします。
@@ -33,19 +33,19 @@ def activate(train, ev, param, MeterClass, res, layoutres=False):
         layoutres (optional): Trueでレイアウトのリソースを参照します。デフォルト(False)は編成のリソースを参照します。 
     """
     if ev == 'init':
-        #td = train.GetDict()
+        td = train.GetDict()
         tid = train.GetID()
         train.SetEventFrame()
         meter = MeterClass(train, res, layoutres)
-        #td['ATENXA.Meter'] = meter
-        _trainmeter[tid] = meter
+        td['ATENXA.Meter'] = meter
+        #_trainmeter[tid] = meter
         #return meter
     elif ev == 'frame':
-        #td = train.GetDict()
-        #meter = td['ATENXA.Meter']
-        tid = train.GetID()
-        meter = _trainmeter[tid]
-        #meter._frame()
+        td = train.GetDict()
+        meter = td['ATENXA.Meter']
+        #tid = train.GetID()
+        #meter = _trainmeter[tid]
+        meter._frame()
         pass
 
 

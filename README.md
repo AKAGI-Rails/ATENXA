@@ -16,7 +16,7 @@ VRMNXpyの，シンプル・使いやすい・リアルな拡張です。
 ATENXAを使用するレイアウトと同じディレクトリに，
 atenxaフォルダをそのままコピーするのが典型的な方法です。
 
-```
+```text
 (somedirectory)
 ├ atenxa
 │ ├ __init__.py
