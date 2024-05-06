@@ -7,5 +7,7 @@ NXACC.dat
 __pycache__
 
 /example/*
+!/example/crossing.vrmnx
+!/example/meter_extension/meter.vrmnx
 
 /docs-src/_build
