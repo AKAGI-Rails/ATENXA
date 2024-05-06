@@ -1,0 +1,17 @@
+ATENXA APIリファレンス
+======================
+
+.. automodapi:: atenxa
+    :no-inheritance-diagram:
+
+.. automodapi:: atenxa.crossing
+    :no-inheritance-diagram:
+
+.. automodapi:: atenxa.meter
+    :no-inheritance-diagram:
+
+.. automodapi:: atenxa.richevent
+    :no-inheritance-diagram:
+
+.. automodapi:: atenxa.sprite
+    :no-inheritance-diagram:

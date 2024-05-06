@@ -1,0 +1,7 @@
+TimerEvent
+==========
+
+.. currentmodule:: atenxa
+
+.. autoclass:: TimerEvent
+   :show-inheritance:
