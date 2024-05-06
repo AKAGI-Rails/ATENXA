@@ -45,7 +45,7 @@ def activate(train, ev, param, MeterClass, res, layoutres=False):
         #meter = td['ATENXA.Meter']
         tid = train.GetID()
         meter = _trainmeter[tid]
-        #meter._frame()
+        meter._frame()
         pass
 
 
