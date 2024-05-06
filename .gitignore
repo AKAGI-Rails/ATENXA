@@ -8,6 +8,7 @@ __pycache__
 
 /example/*
 !/example/crossing.vrmnx
+!/example/meter_extension/
 !/example/meter_extension/meter.vrmnx
 !/example/meter_extension/meter_west160.py
 !/example/meter_extension/meter_west160.vrmnx
