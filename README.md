@@ -25,7 +25,7 @@ VRMNX (Virtual Railroad Models System NX) is developed by I.MAGIC. Japanese-only
 ATENXAを使用するレイアウトと同じディレクトリに，
 atenxaフォルダをそのままコピーするのが典型的な方法です。
 
-```
+```text
 (somedirectory)
 ├ atenxa
 │ ├ __init__.py
