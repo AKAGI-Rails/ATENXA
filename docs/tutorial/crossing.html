@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 
-<html lang="ja">
+<html lang="ja" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -47,17 +47,16 @@
   
   
     <title>自動踏切のセットアップ &#8212; ATENXA 1.0.0 ドキュメント</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/translations.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=75810a84" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css?v=79c92029" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=144c8c96"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=4755f45a"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="ATENXA APIリファレンス" href="../reference.html" />
+    <link rel="next" title="速度計スプライトの基本と応用" href="meter.html" />
     <link rel="prev" title="チュートリアル" href="index.html" />
   
    
@@ -104,8 +103,8 @@
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="../search.html" method="GET" name="search">
-      <input type="text" class="md-search__input" name="q" placeholder="Search"
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder=""Search""
              autocapitalize="off" autocomplete="off" spellcheck="false"
              data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
@@ -230,7 +229,7 @@
       
         
 <nav class="md-nav md-nav--secondary">
-    <label class="md-nav__title" for="__toc">Contents</label>
+    <label class="md-nav__title" for="__toc">"Contents"</label>
   <ul class="md-nav__list" data-md-scrollfix="">
         <li class="md-nav__item"><a href="#tutorial-crossing--page-root" class="md-nav__link">自動踏切のセットアップ</a><nav class="md-nav">
               <ul class="md-nav__list">
@@ -263,6 +262,13 @@
 
   </ul>
 </nav>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="meter.html" class="md-nav__link">速度計スプライトの基本と応用</a>
       
     
     </li></ul>
@@ -313,7 +319,7 @@
               <div class="md-sidebar__inner">
                 
 <nav class="md-nav md-nav--secondary">
-    <label class="md-nav__title" for="__toc">Contents</label>
+    <label class="md-nav__title" for="__toc">"Contents"</label>
   <ul class="md-nav__list" data-md-scrollfix="">
         <li class="md-nav__item"><a href="#tutorial-crossing--page-root" class="md-nav__link">自動踏切のセットアップ</a><nav class="md-nav">
               <ul class="md-nav__list">
@@ -355,14 +361,14 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="tutorial-crossing--page-root">自動踏切のセットアップ<a class="headerlink" href="#tutorial-crossing--page-root" title="このヘッドラインへのパーマリンク">¶</a></h1>
+  <section id="id1">
+<h1 id="tutorial-crossing--page-root">自動踏切のセットアップ<a class="headerlink" href="#tutorial-crossing--page-root" title="Link to this heading">¶</a></h1>
 <p><img alt="自動踏切" src="../_images/crossing.00top.jpg"/></p>
 <p><code class="docutils literal notranslate"><span class="pre">atenxa.crossing</span></code> モジュールでは，センサーを使って踏切を自動で作動させる機能を提供しています。
 警報機の鳴動から遮断開始までの時間差や，方向表示器の制御も含めた高い機能を備えています。</p>
 <p>組み込みは，各部品にに1行のみとシンプルです。</p>
-
-<h2 id="id2">レイアウトスクリプトの設定<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<section id="id2">
+<h2 id="id2">レイアウトスクリプトの設定<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
 <p>下記のようなディレクトリ構成で，レイアウトとatenxaパッケージを保存してください。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>YourLayout
 ├─ atenxa
@@ -373,20 +379,20 @@
 </div>
 <p>レイアウトから，同一ディレクトリからatenxaパッケージを読み込むため，レイアウトスクリプトに以下を記述します。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#LAYOUT</span>
-<span class="kn">import</span> <span class="nn">vrmapi</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">vrmapi</span>
 
 <span class="c1"># 同一ディレクトリのパッケージを優先で読み込む設定</span>
-<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">vrmapi</span><span class="o">.</span><span class="n">SYSTEM</span><span class="p">()</span><span class="o">.</span><span class="n">GetLayoutDir</span><span class="p">())</span>
 
 <span class="c1"># atenxaのcrossingサブパッケージを，atxという短縮名称でインポート</span>
 <span class="c1"># 以後，他のオブジェクトのスクリプトからもatxという名前で使えます。</span>
-<span class="kn">import</span> <span class="nn">atenxa.crossing</span> <span class="k">as</span> <span class="nn">atx</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">atenxa.crossing</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">atx</span>
 </pre></div>
 </div>
-
-
-<h2 id="id3">レイアウト構成<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+</section>
+<section id="id3">
+<h2 id="id3">レイアウト構成<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
 <p>サンプルでは，下図のような複線区間の踏切に動作を設定します。
 踏切には警報機A（方向表示機つき）と遮断機を設置しました。</p>
 <p>列車通過で踏切を開閉する位置に，「接近センサー」と「離脱センサー」を設置します。</p>
@@ -395,80 +401,80 @@
 <p>踏切には，「通過方向」を予め定めておきます。
 サンプルでは，左から右に通過するのを「方向0」，右から左に通過するのを「方向1」と決めます。</p>
 <p><img alt="部品の配置" src="../_images/crossing.01layout.png"/></p>
-
-
-<h2 id="id4">踏切警報機のセットアップ<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+</section>
+<section id="id4">
+<h2 id="id4">踏切警報機のセットアップ<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
 <p>踏切部品やセンサーへのスクリプトの記述はそれぞれ1行です。イベントハンドラの先頭に，以下の図に示す行をそれぞれ書き込みます。</p>
 <p><img alt="仕上がり例" src="../_images/crossing.03setup.png"/></p>
 <p>センサーへの記述は，<code class="docutils literal notranslate"><span class="pre">activate_close</span></code>と<code class="docutils literal notranslate"><span class="pre">activate_open</span></code>を間違えないようにしてください。以下に詳細を述べます。</p>
-
-<h3 id="id5">踏切警報機（基準方向）<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<section id="id5">
+<h3 id="id5">踏切警報機（基準方向）<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
 <p>方向表示機において，左から右が「方向0」，右から左が「方向1」とするのが基準となっています。</p>
 <p><img alt="方向表示器" src="../_images/crossing.signdir.png"/></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#OBJID=10</span>
-<span class="kn">import</span> <span class="nn">vrmapi</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">vrmapi</span>
 
-<span class="k">def</span> <span class="nf">vrmevent_10</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">ev</span><span class="p">,</span><span class="n">param</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">vrmevent_10</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">ev</span><span class="p">,</span><span class="n">param</span><span class="p">):</span>
     <span class="n">atx</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">ev</span><span class="p">,</span><span class="n">param</span><span class="p">,</span> <span class="s2">"neko"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">activate</span></code> 関数を記述すると，踏切部品をATENXA踏切システムの踏切部品として各種機能をセットアップします。
 イベントハンドラが受け取った <code class="docutils literal notranslate"><span class="pre">obj</span></code>, <code class="docutils literal notranslate"><span class="pre">ev</span></code>, <code class="docutils literal notranslate"><span class="pre">param</span></code> をそのまま渡したら，グループの名称 <code class="docutils literal notranslate"><span class="pre">"neko"</span></code> を設定します。</p>
-
-
-<h3 id="id6">踏切警報機（逆方向）<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
+</section>
+<section id="id6">
+<h3 id="id6">踏切警報機（逆方向）<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
 <p>左向きが「方向0」，右向きが「方向1」となる向きの警報機には，<code class="docutils literal notranslate"><span class="pre">activate</span></code>関数の<code class="docutils literal notranslate"><span class="pre">rev</span></code>オプションを有効にします。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#OBJID=12</span>
-<span class="kn">import</span> <span class="nn">vrmapi</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">vrmapi</span>
 
-<span class="k">def</span> <span class="nf">vrmevent_12</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">ev</span><span class="p">,</span><span class="n">param</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">vrmevent_12</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">ev</span><span class="p">,</span><span class="n">param</span><span class="p">):</span>
     <span class="n">atx</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">ev</span><span class="p">,</span><span class="n">param</span><span class="p">,</span> <span class="s2">"neko"</span><span class="p">,</span> <span class="n">rev</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#方向表示器を逆転</span>
 </pre></div>
 </div>
-
-
-<h3 id="id7">遮断機<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
+</section>
+<section id="id7">
+<h3 id="id7">遮断機<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h3>
 <p>遮断機は，警報機が鳴り始めて数秒経ってから下がり始めます。このような動作は，<code class="docutils literal notranslate"><span class="pre">activate</span></code>関数の<code class="docutils literal notranslate"><span class="pre">delay</span></code>オプションで有効にします。設定の単位は「秒」です。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#OBJID=14</span>
-<span class="kn">import</span> <span class="nn">vrmapi</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">vrmapi</span>
 
-<span class="k">def</span> <span class="nf">vrmevent_14</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">ev</span><span class="p">,</span><span class="n">param</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">vrmevent_14</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">ev</span><span class="p">,</span><span class="n">param</span><span class="p">):</span>
     <span class="n">atx</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">ev</span><span class="p">,</span><span class="n">param</span><span class="p">,</span> <span class="s2">"neko"</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span> <span class="c1"># 1.5秒遅延</span>
 </pre></div>
 </div>
-
-
-
-<h2 id="id8">センサー部品のセットアップ<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
-
-<h3 id="id9">遮断センサー<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h3>
+</section>
+</section>
+<section id="id8">
+<h2 id="id8">センサー部品のセットアップ<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h2>
+<section id="id9">
+<h3 id="id9">遮断センサー<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h3>
 <p>編成の先頭車輪が通過すると踏切を閉じるセンサーです。踏切の遮断が間に合う程度に，十分手前に設置します。</p>
 <p>スクリプトの記述は以下のようになります。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">vrmapi</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">vrmapi</span>
 
-<span class="k">def</span> <span class="nf">vrmevent_23</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">ev</span><span class="p">,</span><span class="n">param</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">vrmevent_23</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">ev</span><span class="p">,</span><span class="n">param</span><span class="p">):</span>
     <span class="n">atx</span><span class="o">.</span><span class="n">activate_close</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">ev</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="s2">"neko"</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">#方向0の進入センサー</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">activate_close</span></code>関数の第5引数（direction）で，列車の進入方向が「方向0」か「方向1」かを明示します。</p>
-
-
-<h3 id="id10">開放センサー<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h3>
+</section>
+<section id="id10">
+<h3 id="id10">開放センサー<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
 <p>列車が踏切を通過し終わったことを検知して，踏切を開けるセンサーです。踏切の直後に設置します。</p>
 <p>異なる長さの編成が通過することを想定し，「最後尾台車」の検知で踏切が開くよう設定します。
 「ツールオプション」＞「プロパティ」＞「ATS基本設定」において，検出オプションを「最後尾台車を検出」に設定します。</p>
 <p><img alt="センサーの検出オプション" src="../_images/crossing.sensormode.png"/></p>
 <p>スクリプトには，以下のように記述します。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#OBJID=26</span>
-<span class="kn">import</span> <span class="nn">vrmapi</span>
-<span class="k">def</span> <span class="nf">vrmevent_26</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">ev</span><span class="p">,</span><span class="n">param</span><span class="p">):</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">vrmapi</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">vrmevent_26</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">ev</span><span class="p">,</span><span class="n">param</span><span class="p">):</span>
     <span class="n">atx</span><span class="o">.</span><span class="n">activate_open</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">ev</span><span class="p">,</span><span class="n">param</span><span class="p">,</span> <span class="s2">"neko"</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">#方向1の退出センサー</span>
 </pre></div>
 </div>
 <p>これで，スクリプト関係も含めてセットアップは終了です。</p>
-
-
-
+</section>
+</section>
+</section>
 
 
           </article>
@@ -489,17 +495,17 @@
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> Previous </span> チュートリアル </span>
+                      class="md-footer-nav__direction"> "Previous" </span> チュートリアル </span>
               </div>
             </a>
           
           
-            <a href="../reference.html" title="ATENXA APIリファレンス"
+            <a href="meter.html" title="速度計スプライトの基本と応用"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> ATENXA APIリファレンス </span>
+                class="md-footer-nav__direction"> "Next" </span> 速度計スプライトの基本と応用 </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
@@ -517,7 +523,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

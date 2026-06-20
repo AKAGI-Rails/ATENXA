@@ -1,6 +1,0 @@
-kill_event
-==========
-
-.. currentmodule:: atenxa
-
-.. autofunction:: kill_event

@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 
-<html lang="ja">
+<html lang="ja" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -47,14 +47,13 @@
   
   
     <title>Sprite &#8212; ATENXA 1.0.0 ドキュメント</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/translations.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=75810a84" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css?v=79c92029" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=144c8c96"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=4755f45a"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
     <link rel="next" title="リリースノート" href="../history.html" />
@@ -104,8 +103,8 @@
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="../search.html" method="GET" name="search">
-      <input type="text" class="md-search__input" name="q" placeholder="Search"
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder=""Search""
              autocapitalize="off" autocomplete="off" spellcheck="false"
              data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
@@ -302,7 +301,52 @@
               <div class="md-sidebar__inner">
                 
 <nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">"Contents"</label>
   <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#api-atenxa-sprite-sprite--page-root" class="md-nav__link">Sprite</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#atenxa.sprite.Sprite" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">Sprite</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#atenxa.sprite.Sprite.uv" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">Sprite.uv</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#atenxa.sprite.Sprite.pos" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">Sprite.pos</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#atenxa.sprite.Sprite.org" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">Sprite.org</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#atenxa.sprite.Sprite.trans" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">Sprite.trans</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#atenxa.sprite.Sprite.color" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">Sprite.color</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#atenxa.sprite.Sprite.pivot" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">Sprite.pivot</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#atenxa.sprite.Sprite.rot" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">Sprite.rot</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#atenxa.sprite.Sprite.dispdirect" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">Sprite.dispdirect</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#atenxa.sprite.Sprite.GetTextureDX" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">Sprite.GetTextureDX()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#atenxa.sprite.Sprite.GetTextureDY" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">Sprite.GetTextureDY()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#atenxa.sprite.Sprite.SetColor" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">Sprite.SetColor()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#atenxa.sprite.Sprite.SetOrg" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">Sprite.SetOrg()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#atenxa.sprite.Sprite.SetPos" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">Sprite.SetPos()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#atenxa.sprite.Sprite.SetRotate" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">Sprite.SetRotate()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#atenxa.sprite.Sprite.SetSprite" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">Sprite.SetSprite()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#atenxa.sprite.Sprite.SetTranslate" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">Sprite.SetTranslate()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#atenxa.sprite.Sprite.SetUV" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">Sprite.SetUV()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#atenxa.sprite.Sprite.SetZoom" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">Sprite.SetZoom()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
     
 <li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/api/atenxa.sprite.Sprite.rst.txt">ソースコードを表示</a> </li>
 
@@ -317,11 +361,11 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="api-atenxa-sprite-sprite--page-root">Sprite<a class="headerlink" href="#api-atenxa-sprite-sprite--page-root" title="このヘッドラインへのパーマリンク">¶</a></h1>
+  <section id="sprite">
+<h1 id="api-atenxa-sprite-sprite--page-root">Sprite<a class="headerlink" href="#api-atenxa-sprite-sprite--page-root" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt id="atenxa.sprite.Sprite">
-<em class="property">class </em><code class="sig-prename descclassname">atenxa.sprite.</code><code class="sig-name descname">Sprite</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">res</span></em>, <em class="sig-param"><span class="n">src</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/sprite.html#Sprite"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#atenxa.sprite.Sprite" title="この定義へのパーマリンク">¶</a></dt>
+<dt class="sig sig-object py" id="atenxa.sprite.Sprite">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">atenxa.sprite.</span></span><span class="sig-name descname"><span class="pre">Sprite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">res</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/sprite.html#Sprite"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#atenxa.sprite.Sprite" title="Link to this definition">¶</a></dt>
 <dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>vrmapi.VRMSpriteクラスのラッパ。</p>
 <p>SetUV(), SetPos()をした後，frameイベント内でSetSprite()してください。(直接指定モード)</p>
@@ -334,7 +378,7 @@
 <p>コンストラクタはリソース画像読み込み済みのSpriteオブジェクトを返します。</p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">パラメータ</dt>
+<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>res</strong> -- リソース画像の番号。</p></li>
 <li><p><strong>src</strong> -- リソースの読み込み先となる編成オブジェクトのID。デフォルトではレイアウトのリソースから読み込みます。</p></li>
@@ -342,43 +386,43 @@
 </dd>
 </dl>
 <dl class="py attribute">
-<dt id="atenxa.sprite.Sprite.uv">
-<code class="sig-name descname">uv</code><a class="headerlink" href="#atenxa.sprite.Sprite.uv" title="この定義へのパーマリンク">¶</a></dt>
+<dt class="sig sig-object py" id="atenxa.sprite.Sprite.uv">
+<span class="sig-name descname"><span class="pre">uv</span></span><a class="headerlink" href="#atenxa.sprite.Sprite.uv" title="Link to this definition">¶</a></dt>
 <dd><p>UV座標のタプル (u0, v0, u1, v1)</p>
 </dd></dl>
 <dl class="py attribute">
-<dt id="atenxa.sprite.Sprite.pos">
-<code class="sig-name descname">pos</code><a class="headerlink" href="#atenxa.sprite.Sprite.pos" title="この定義へのパーマリンク">¶</a></dt>
+<dt class="sig sig-object py" id="atenxa.sprite.Sprite.pos">
+<span class="sig-name descname"><span class="pre">pos</span></span><a class="headerlink" href="#atenxa.sprite.Sprite.pos" title="Link to this definition">¶</a></dt>
 <dd><p>表示座標のタプル (sx0,sy0, sx1,sy1, sx2,sy2, sx3,sy3)</p>
 </dd></dl>
 <dl class="py attribute">
-<dt id="atenxa.sprite.Sprite.org">
-<code class="sig-name descname">org</code><a class="headerlink" href="#atenxa.sprite.Sprite.org" title="この定義へのパーマリンク">¶</a></dt>
+<dt class="sig sig-object py" id="atenxa.sprite.Sprite.org">
+<span class="sig-name descname"><span class="pre">org</span></span><a class="headerlink" href="#atenxa.sprite.Sprite.org" title="Link to this definition">¶</a></dt>
 <dd><p>演算指定モードでの基準サイズ (dx, dy)</p>
 </dd></dl>
 <dl class="py attribute">
-<dt id="atenxa.sprite.Sprite.trans">
-<code class="sig-name descname">trans</code><a class="headerlink" href="#atenxa.sprite.Sprite.trans" title="この定義へのパーマリンク">¶</a></dt>
+<dt class="sig sig-object py" id="atenxa.sprite.Sprite.trans">
+<span class="sig-name descname"><span class="pre">trans</span></span><a class="headerlink" href="#atenxa.sprite.Sprite.trans" title="Link to this definition">¶</a></dt>
 <dd><p>移動量(x,y)</p>
 </dd></dl>
 <dl class="py attribute">
-<dt id="atenxa.sprite.Sprite.color">
-<code class="sig-name descname">color</code><a class="headerlink" href="#atenxa.sprite.Sprite.color" title="この定義へのパーマリンク">¶</a></dt>
+<dt class="sig sig-object py" id="atenxa.sprite.Sprite.color">
+<span class="sig-name descname"><span class="pre">color</span></span><a class="headerlink" href="#atenxa.sprite.Sprite.color" title="Link to this definition">¶</a></dt>
 <dd><p>表示色(r,g,b,a)</p>
 </dd></dl>
 <dl class="py attribute">
-<dt id="atenxa.sprite.Sprite.pivot">
-<code class="sig-name descname">pivot</code><a class="headerlink" href="#atenxa.sprite.Sprite.pivot" title="この定義へのパーマリンク">¶</a></dt>
+<dt class="sig sig-object py" id="atenxa.sprite.Sprite.pivot">
+<span class="sig-name descname"><span class="pre">pivot</span></span><a class="headerlink" href="#atenxa.sprite.Sprite.pivot" title="Link to this definition">¶</a></dt>
 <dd><p>回転中心(x,y)</p>
 </dd></dl>
 <dl class="py attribute">
-<dt id="atenxa.sprite.Sprite.rot">
-<code class="sig-name descname">rot</code><a class="headerlink" href="#atenxa.sprite.Sprite.rot" title="この定義へのパーマリンク">¶</a></dt>
+<dt class="sig sig-object py" id="atenxa.sprite.Sprite.rot">
+<span class="sig-name descname"><span class="pre">rot</span></span><a class="headerlink" href="#atenxa.sprite.Sprite.rot" title="Link to this definition">¶</a></dt>
 <dd><p>回転角度(deg)のfloat。</p>
 </dd></dl>
 <dl class="py attribute">
-<dt id="atenxa.sprite.Sprite.dispdirect">
-<code class="sig-name descname">dispdirect</code><a class="headerlink" href="#atenxa.sprite.Sprite.dispdirect" title="この定義へのパーマリンク">¶</a></dt>
+<dt class="sig sig-object py" id="atenxa.sprite.Sprite.dispdirect">
+<span class="sig-name descname"><span class="pre">dispdirect</span></span><a class="headerlink" href="#atenxa.sprite.Sprite.dispdirect" title="Link to this definition">¶</a></dt>
 <dd><p>Trueで直接指定モード。Falseで演算指定モード。</p>
 </dd></dl>
 <p class="rubric">サンプル</p>
@@ -393,11 +437,7 @@
 </pre></div>
 </div>
 <p class="rubric">Methods Summary</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%"/>
-<col style="width: 90%"/>
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#atenxa.sprite.Sprite.GetTextureDX" title="atenxa.sprite.Sprite.GetTextureDX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GetTextureDX</span></code></a>()</p></td>
 <td><p>スプライトにロードしたテクスチャー画像のXサイズを取得する。</p></td>
@@ -433,53 +473,53 @@
 </table>
 <p class="rubric">Methods Documentation</p>
 <dl class="py method">
-<dt id="atenxa.sprite.Sprite.GetTextureDX">
-<code class="sig-name descname">GetTextureDX</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/sprite.html#Sprite.GetTextureDX"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#atenxa.sprite.Sprite.GetTextureDX" title="この定義へのパーマリンク">¶</a></dt>
+<dt class="sig sig-object py" id="atenxa.sprite.Sprite.GetTextureDX">
+<span class="sig-name descname"><span class="pre">GetTextureDX</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/sprite.html#Sprite.GetTextureDX"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#atenxa.sprite.Sprite.GetTextureDX" title="Link to this definition">¶</a></dt>
 <dd><p>スプライトにロードしたテクスチャー画像のXサイズを取得する。</p>
 </dd></dl>
 <dl class="py method">
-<dt id="atenxa.sprite.Sprite.GetTextureDY">
-<code class="sig-name descname">GetTextureDY</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/sprite.html#Sprite.GetTextureDY"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#atenxa.sprite.Sprite.GetTextureDY" title="この定義へのパーマリンク">¶</a></dt>
+<dt class="sig sig-object py" id="atenxa.sprite.Sprite.GetTextureDY">
+<span class="sig-name descname"><span class="pre">GetTextureDY</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/sprite.html#Sprite.GetTextureDY"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#atenxa.sprite.Sprite.GetTextureDY" title="Link to this definition">¶</a></dt>
 <dd><p>スプライトにロードしたテクスチャー画像のYサイズを取得する。</p>
 </dd></dl>
 <dl class="py method">
-<dt id="atenxa.sprite.Sprite.SetColor">
-<code class="sig-name descname">SetColor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">r</span></em>, <em class="sig-param"><span class="n">g</span></em>, <em class="sig-param"><span class="n">b</span></em>, <em class="sig-param"><span class="n">a</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/sprite.html#Sprite.SetColor"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#atenxa.sprite.Sprite.SetColor" title="この定義へのパーマリンク">¶</a></dt>
+<dt class="sig sig-object py" id="atenxa.sprite.Sprite.SetColor">
+<span class="sig-name descname"><span class="pre">SetColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/sprite.html#Sprite.SetColor"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#atenxa.sprite.Sprite.SetColor" title="Link to this definition">¶</a></dt>
 <dd><p>スプライトの色を指定します。</p>
 <p>r,g,b,a: 0.0～1.0の数値を設定します。</p>
 </dd></dl>
 <dl class="py method">
-<dt id="atenxa.sprite.Sprite.SetOrg">
-<code class="sig-name descname">SetOrg</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">orgdx</span></em>, <em class="sig-param"><span class="n">orgdy</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/sprite.html#Sprite.SetOrg"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#atenxa.sprite.Sprite.SetOrg" title="この定義へのパーマリンク">¶</a></dt>
+<dt class="sig sig-object py" id="atenxa.sprite.Sprite.SetOrg">
+<span class="sig-name descname"><span class="pre">SetOrg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orgdx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orgdy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/sprite.html#Sprite.SetOrg"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#atenxa.sprite.Sprite.SetOrg" title="Link to this definition">¶</a></dt>
 <dd><p>スプライトの基準サイズを設定します。</p>
 <p>このメソッドを実行して以降は，演算指定モードでスプライトを描画します。
 基準サイズをもとに、拡大縮小、回転、移動の演算を順番に行い、
 結果をSetSprite()で表示します。</p>
 <dl class="field-list simple">
-<dt class="field-odd">パラメータ</dt>
+<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>orgdx</strong> -- </p></li>
+<li><p><strong>orgdx</strong></p></li>
 <li><p><strong>orgdy</strong> -- 基準サイズ</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt id="atenxa.sprite.Sprite.SetPos">
-<code class="sig-name descname">SetPos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sx0</span></em>, <em class="sig-param"><span class="n">sy0</span></em>, <em class="sig-param"><span class="n">sx1</span></em>, <em class="sig-param"><span class="n">sy1</span></em>, <em class="sig-param"><span class="n">sx2</span></em>, <em class="sig-param"><span class="n">sy2</span></em>, <em class="sig-param"><span class="n">sx3</span></em>, <em class="sig-param"><span class="n">sy3</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/sprite.html#Sprite.SetPos"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#atenxa.sprite.Sprite.SetPos" title="この定義へのパーマリンク">¶</a></dt>
+<dt class="sig sig-object py" id="atenxa.sprite.Sprite.SetPos">
+<span class="sig-name descname"><span class="pre">SetPos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sx0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sy0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sx1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sy1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sx2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sy2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sx3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sy3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/sprite.html#Sprite.SetPos"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#atenxa.sprite.Sprite.SetPos" title="Link to this definition">¶</a></dt>
 <dd><p>スプライトの表示座標を設定</p>
 <p>四角形スプライトの画面上の座標を設定します。
 このメソッドを実行すると，それ以降は直接指定モードでスプライトを描画します。</p>
 <dl class="field-list simple">
-<dt class="field-odd">パラメータ</dt>
+<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>sx0</strong> -- </p></li>
+<li><p><strong>sx0</strong></p></li>
 <li><p><strong>sy0</strong> -- 左上座標</p></li>
-<li><p><strong>sx1</strong> -- </p></li>
+<li><p><strong>sx1</strong></p></li>
 <li><p><strong>sy1</strong> -- 右上座標</p></li>
-<li><p><strong>sx2</strong> -- </p></li>
+<li><p><strong>sx2</strong></p></li>
 <li><p><strong>sy2</strong> -- 左下座標</p></li>
-<li><p><strong>sx3</strong> -- </p></li>
+<li><p><strong>sx3</strong></p></li>
 <li><p><strong>sy3</strong> -- 右下座標</p></li>
 </ul>
 </dd>
@@ -490,14 +530,14 @@
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="atenxa.sprite.Sprite.SetRotate">
-<code class="sig-name descname">SetRotate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pivotx</span></em>, <em class="sig-param"><span class="n">pivoty</span></em>, <em class="sig-param"><span class="n">rot</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/sprite.html#Sprite.SetRotate"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#atenxa.sprite.Sprite.SetRotate" title="この定義へのパーマリンク">¶</a></dt>
+<dt class="sig sig-object py" id="atenxa.sprite.Sprite.SetRotate">
+<span class="sig-name descname"><span class="pre">SetRotate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pivotx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pivoty</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/sprite.html#Sprite.SetRotate"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#atenxa.sprite.Sprite.SetRotate" title="Link to this definition">¶</a></dt>
 <dd><p>スプライトの回転を設定します。</p>
 <p>描画モードが演算指定モードのときに使用されます。</p>
 <dl class="field-list simple">
-<dt class="field-odd">パラメータ</dt>
+<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>pivotx</strong> -- </p></li>
+<li><p><strong>pivotx</strong></p></li>
 <li><p><strong>pivoty</strong> -- 回転中心座標。0.0で原点。</p></li>
 <li><p><strong>rot</strong> -- 回転角度(deg)</p></li>
 </ul>
@@ -505,20 +545,20 @@
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt id="atenxa.sprite.Sprite.SetSprite">
-<code class="sig-name descname">SetSprite</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/sprite.html#Sprite.SetSprite"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#atenxa.sprite.Sprite.SetSprite" title="この定義へのパーマリンク">¶</a></dt>
+<dt class="sig sig-object py" id="atenxa.sprite.Sprite.SetSprite">
+<span class="sig-name descname"><span class="pre">SetSprite</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/sprite.html#Sprite.SetSprite"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#atenxa.sprite.Sprite.SetSprite" title="Link to this definition">¶</a></dt>
 <dd><p>スプライトを画面に表示。</p>
 <p>直接指定モードか演算指定モードを自動で選択して表示します。</p>
 </dd></dl>
 <dl class="py method">
-<dt id="atenxa.sprite.Sprite.SetTranslate">
-<code class="sig-name descname">SetTranslate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/sprite.html#Sprite.SetTranslate"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#atenxa.sprite.Sprite.SetTranslate" title="この定義へのパーマリンク">¶</a></dt>
+<dt class="sig sig-object py" id="atenxa.sprite.Sprite.SetTranslate">
+<span class="sig-name descname"><span class="pre">SetTranslate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/sprite.html#Sprite.SetTranslate"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#atenxa.sprite.Sprite.SetTranslate" title="Link to this definition">¶</a></dt>
 <dd><p>スプライトの移動を設定します。</p>
 <p>描画モードが演算指定モードのときに使用されます。</p>
 </dd></dl>
 <dl class="py method">
-<dt id="atenxa.sprite.Sprite.SetUV">
-<code class="sig-name descname">SetUV</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">u0</span></em>, <em class="sig-param"><span class="n">v0</span></em>, <em class="sig-param"><span class="n">u1</span></em>, <em class="sig-param"><span class="n">v1</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/sprite.html#Sprite.SetUV"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#atenxa.sprite.Sprite.SetUV" title="この定義へのパーマリンク">¶</a></dt>
+<dt class="sig sig-object py" id="atenxa.sprite.Sprite.SetUV">
+<span class="sig-name descname"><span class="pre">SetUV</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">u0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/sprite.html#Sprite.SetUV"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#atenxa.sprite.Sprite.SetUV" title="Link to this definition">¶</a></dt>
 <dd><p>スプライトパターンを設定。</p>
 <p>u0,v0がスプライトパターンの左上座標。u1,v1は右下の座標。</p>
 <div class="admonition note">
@@ -527,21 +567,21 @@
 </div>
 </dd></dl>
 <dl class="py method">
-<dt id="atenxa.sprite.Sprite.SetZoom">
-<code class="sig-name descname">SetZoom</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">zoomx</span></em>, <em class="sig-param"><span class="n">zoomy</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/sprite.html#Sprite.SetZoom"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#atenxa.sprite.Sprite.SetZoom" title="この定義へのパーマリンク">¶</a></dt>
+<dt class="sig sig-object py" id="atenxa.sprite.Sprite.SetZoom">
+<span class="sig-name descname"><span class="pre">SetZoom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zoomx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zoomy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/sprite.html#Sprite.SetZoom"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#atenxa.sprite.Sprite.SetZoom" title="Link to this definition">¶</a></dt>
 <dd><p>スプライトの拡大縮小率を設定します。</p>
 <p>描画モードが演算指定モードのときに使用されます。</p>
 <dl class="field-list simple">
-<dt class="field-odd">パラメータ</dt>
+<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>zoomx</strong> -- </p></li>
+<li><p><strong>zoomx</strong></p></li>
 <li><p><strong>zoomy</strong> -- 1.0で等倍。</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 </dd></dl>
-
+</section>
 
 
           </article>
@@ -562,7 +602,7 @@
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> Previous </span> TimerEvent </span>
+                      class="md-footer-nav__direction"> "Previous" </span> TimerEvent </span>
               </div>
             </a>
           
@@ -572,7 +612,7 @@
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> リリースノート </span>
+                class="md-footer-nav__direction"> "Next" </span> リリースノート </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
@@ -590,7 +630,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

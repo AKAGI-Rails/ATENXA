@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 
-<html lang="ja">
+<html lang="ja" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -47,14 +47,13 @@
   
   
     <title>MeterBase &#8212; ATENXA 1.0.0 ドキュメント</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/translations.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=75810a84" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css?v=79c92029" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=144c8c96"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=4755f45a"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
     <link rel="next" title="MeterSimple" href="atenxa.meter.MeterSimple.html" />
@@ -104,8 +103,8 @@
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="../search.html" method="GET" name="search">
-      <input type="text" class="md-search__input" name="q" placeholder="Search"
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder=""Search""
              autocapitalize="off" autocomplete="off" spellcheck="false"
              data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
@@ -302,7 +301,22 @@
               <div class="md-sidebar__inner">
                 
 <nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">"Contents"</label>
   <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#api-atenxa-meter-meterbase--page-root" class="md-nav__link">MeterBase</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#atenxa.meter.MeterBase" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MeterBase</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#atenxa.meter.MeterBase.display" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MeterBase.display()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#atenxa.meter.MeterBase.new_sprite" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MeterBase.new_sprite()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#atenxa.meter.MeterBase.setup" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MeterBase.setup()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
     
 <li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/api/atenxa.meter.MeterBase.rst.txt">ソースコードを表示</a> </li>
 
@@ -317,18 +331,18 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="api-atenxa-meter-meterbase--page-root">MeterBase<a class="headerlink" href="#api-atenxa-meter-meterbase--page-root" title="このヘッドラインへのパーマリンク">¶</a></h1>
+  <section id="meterbase">
+<h1 id="api-atenxa-meter-meterbase--page-root">MeterBase<a class="headerlink" href="#api-atenxa-meter-meterbase--page-root" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt id="atenxa.meter.MeterBase">
-<em class="property">class </em><code class="sig-prename descclassname">atenxa.meter.</code><code class="sig-name descname">MeterBase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">train</span></em>, <em class="sig-param"><span class="n">res</span></em>, <em class="sig-param"><span class="n">layoutres</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/meter.html#MeterBase"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#atenxa.meter.MeterBase" title="この定義へのパーマリンク">¶</a></dt>
+<dt class="sig sig-object py" id="atenxa.meter.MeterBase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">atenxa.meter.</span></span><span class="sig-name descname"><span class="pre">MeterBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layoutres</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/meter.html#MeterBase"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#atenxa.meter.MeterBase" title="Link to this definition">¶</a></dt>
 <dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>速度計のためのベースクラス。</p>
 <p>このクラス自体が速度計として機能するわけではありませんが，
 これのサブクラスを作り，setupメソッドとdisplayメソッドをオーバーライドして
 オリジナルデザインの速度計を作ってください。</p>
 <dl class="field-list simple">
-<dt class="field-odd">パラメータ</dt>
+<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>train</strong> -- 対象の編成オブジェクト</p></li>
 <li><p><strong>res</strong> -- 速度計テクスチャのリソースID</p></li>
@@ -338,11 +352,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods Summary</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%"/>
-<col style="width: 90%"/>
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#atenxa.meter.MeterBase.display" title="atenxa.meter.MeterBase.display"><code class="xref py py-obj docutils literal notranslate"><span class="pre">display</span></code></a>()</p></td>
 <td><p>各フレームでスプライトを表示します。</p></td>
@@ -357,32 +367,32 @@
 </table>
 <p class="rubric">Methods Documentation</p>
 <dl class="py method">
-<dt id="atenxa.meter.MeterBase.display">
-<code class="sig-name descname">display</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/meter.html#MeterBase.display"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#atenxa.meter.MeterBase.display" title="この定義へのパーマリンク">¶</a></dt>
+<dt class="sig sig-object py" id="atenxa.meter.MeterBase.display">
+<span class="sig-name descname"><span class="pre">display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/meter.html#MeterBase.display"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#atenxa.meter.MeterBase.display" title="Link to this definition">¶</a></dt>
 <dd><p>各フレームでスプライトを表示します。</p>
 <p>対象の編成が操作対象かつ表示対象のときのみframeイベント内でコールされます。</p>
 </dd></dl>
 <dl class="py method">
-<dt id="atenxa.meter.MeterBase.new_sprite">
-<code class="sig-name descname">new_sprite</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/meter.html#MeterBase.new_sprite"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#atenxa.meter.MeterBase.new_sprite" title="この定義へのパーマリンク">¶</a></dt>
+<dt class="sig sig-object py" id="atenxa.meter.MeterBase.new_sprite">
+<span class="sig-name descname"><span class="pre">new_sprite</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/meter.html#MeterBase.new_sprite"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#atenxa.meter.MeterBase.new_sprite" title="Link to this definition">¶</a></dt>
 <dd><p>スプライトオブジェクトを生成</p>
 <p>atenxa.Spriteスプライトオブジェクトを生成し，
 クラスで設定されたリソースIDと読込先から
 テクスチャをロードします。</p>
 <dl class="field-list simple">
-<dt class="field-odd">戻り値</dt>
+<dt class="field-odd">戻り値<span class="colon">:</span></dt>
 <dd class="field-odd"><p>テクスチャをロード済みのatenxa.Spriteオブジェクト</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt id="atenxa.meter.MeterBase.setup">
-<code class="sig-name descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/meter.html#MeterBase.setup"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#atenxa.meter.MeterBase.setup" title="この定義へのパーマリンク">¶</a></dt>
+<dt class="sig sig-object py" id="atenxa.meter.MeterBase.setup">
+<span class="sig-name descname"><span class="pre">setup</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/meter.html#MeterBase.setup"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#atenxa.meter.MeterBase.setup" title="Link to this definition">¶</a></dt>
 <dd><p>スプライトのパーツを設定します。</p>
 <p>initイベント内でコールされます。</p>
 </dd></dl>
 </dd></dl>
-
+</section>
 
 
           </article>
@@ -403,7 +413,7 @@
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> Previous </span> activate </span>
+                      class="md-footer-nav__direction"> "Previous" </span> activate </span>
               </div>
             </a>
           
@@ -413,7 +423,7 @@
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> MeterSimple </span>
+                class="md-footer-nav__direction"> "Next" </span> MeterSimple </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
@@ -431,7 +441,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

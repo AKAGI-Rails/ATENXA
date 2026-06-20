@@ -1,6 +1,8 @@
 /.vscode
 /.vs
 
+.venv
+
 *.bak
 NXACC.dat
 

@@ -1,7 +1,6 @@
-
 <!DOCTYPE html>
 
-<html lang="ja">
+<html lang="ja" data-content_root="../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -47,14 +46,13 @@
   
   
     <title>atenxa.sprite &#8212; ATENXA 1.0.0 ドキュメント</title>
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/material.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/translations.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=75810a84" />
+    <link rel="stylesheet" type="text/css" href="../../_static/material.css?v=79c92029" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <script src="../../_static/documentation_options.js?v=144c8c96"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/translations.js?v=4755f45a"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="検索" href="../../search.html" />
   
@@ -102,8 +100,8 @@
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="../../search.html" method="GET" name="search">
-      <input type="text" class="md-search__input" name="q" placeholder="Search"
+    <form class="md-search__form" action="../../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder=""Search""
              autocapitalize="off" autocomplete="off" spellcheck="false"
              data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
@@ -168,7 +166,6 @@
       <ul class="md-tabs__list">
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">ATENXA 1.0.0 ドキュメント</a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">モジュールコード</a></li>
-          <li class="md-tabs__item"><a href="../atenxa.html" class="md-tabs__link">atenxa</a></li>
       </ul>
     </div>
   </nav>
@@ -285,10 +282,12 @@
 <span class="sd">"""</span>
 <span class="sd">vrmapi.VRMSpriteのラッパとユーティリティ</span>
 <span class="sd">"""</span>
-<span class="kn">import</span> <span class="nn">vrmapi</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">vrmapi</span>
 
-<div class="viewcode-block" id="Sprite"><a class="viewcode-back" href="../../api/atenxa.sprite.Sprite.html#atenxa.sprite.Sprite">[ドキュメント]</a><span class="k">class</span> <span class="nc">Sprite</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">"""vrmapi.VRMSpriteクラスのラッパ。</span>
+<div class="viewcode-block" id="Sprite">
+<a class="viewcode-back" href="../../api/atenxa.sprite.Sprite.html#atenxa.sprite.Sprite">[ドキュメント]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Sprite</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""vrmapi.VRMSpriteクラスのラッパ。</span>
 
 <span class="sd">    SetUV(), SetPos()をした後，frameイベント内でSetSprite()してください。(直接指定モード)</span>
 
@@ -327,7 +326,7 @@
 <span class="sd">    </span>
 <span class="sd">    """</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">src</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">src</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="n">vrmsprite</span> <span class="o">=</span> <span class="n">vrmapi</span><span class="o">.</span><span class="n">LAYOUT</span><span class="p">()</span><span class="o">.</span><span class="n">CreateSprite</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">src</span><span class="p">:</span>
             <span class="n">vrmsprite</span><span class="o">.</span><span class="n">LoadTrainTexture</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span>
@@ -345,16 +344,24 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="kc">None</span>       <span class="c1">#: スプライトのカラー(r,g,b,a). 0.0&lt;=r,g,b,a&lt;=1.0.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dispdirect</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1">#: Trueで直接指定モード</span>
 
-<div class="viewcode-block" id="Sprite.GetTextureDX"><a class="viewcode-back" href="../../api/atenxa.sprite.Sprite.html#atenxa.sprite.Sprite.GetTextureDX">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">GetTextureDX</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">"""スプライトにロードしたテクスチャー画像のXサイズを取得する。"""</span>
+<div class="viewcode-block" id="Sprite.GetTextureDX">
+<a class="viewcode-back" href="../../api/atenxa.sprite.Sprite.html#atenxa.sprite.Sprite.GetTextureDX">[ドキュメント]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">GetTextureDX</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""スプライトにロードしたテクスチャー画像のXサイズを取得する。"""</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrmsprite</span><span class="o">.</span><span class="n">GetTextureDX</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="Sprite.GetTextureDY"><a class="viewcode-back" href="../../api/atenxa.sprite.Sprite.html#atenxa.sprite.Sprite.GetTextureDY">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">GetTextureDY</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">"""スプライトにロードしたテクスチャー画像のYサイズを取得する。"""</span>
+
+<div class="viewcode-block" id="Sprite.GetTextureDY">
+<a class="viewcode-back" href="../../api/atenxa.sprite.Sprite.html#atenxa.sprite.Sprite.GetTextureDY">[ドキュメント]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">GetTextureDY</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""スプライトにロードしたテクスチャー画像のYサイズを取得する。"""</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vrmsprite</span><span class="o">.</span><span class="n">GetTextureDY</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="Sprite.SetUV"><a class="viewcode-back" href="../../api/atenxa.sprite.Sprite.html#atenxa.sprite.Sprite.SetUV">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">SetUV</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u0</span><span class="p">,</span><span class="n">v0</span><span class="p">,</span> <span class="n">u1</span><span class="p">,</span><span class="n">v1</span><span class="p">):</span>
-        <span class="sd">"""スプライトパターンを設定。</span>
+
+<div class="viewcode-block" id="Sprite.SetUV">
+<a class="viewcode-back" href="../../api/atenxa.sprite.Sprite.html#atenxa.sprite.Sprite.SetUV">[ドキュメント]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">SetUV</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u0</span><span class="p">,</span><span class="n">v0</span><span class="p">,</span> <span class="n">u1</span><span class="p">,</span><span class="n">v1</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""スプライトパターンを設定。</span>
 
 <span class="sd">        u0,v0がスプライトパターンの左上座標。u1,v1は右下の座標。</span>
 
@@ -363,8 +370,11 @@
 <span class="sd">        """</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">uv</span> <span class="o">=</span> <span class="p">(</span><span class="n">u0</span><span class="p">,</span> <span class="n">v0</span><span class="p">,</span> <span class="n">u1</span><span class="p">,</span> <span class="n">v1</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Sprite.SetPos"><a class="viewcode-back" href="../../api/atenxa.sprite.Sprite.html#atenxa.sprite.Sprite.SetPos">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">SetPos</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sx0</span><span class="p">,</span><span class="n">sy0</span><span class="p">,</span> <span class="n">sx1</span><span class="p">,</span><span class="n">sy1</span><span class="p">,</span> <span class="n">sx2</span><span class="p">,</span><span class="n">sy2</span><span class="p">,</span> <span class="n">sx3</span><span class="p">,</span><span class="n">sy3</span><span class="p">):</span>
-        <span class="sd">"""スプライトの表示座標を設定</span>
+
+<div class="viewcode-block" id="Sprite.SetPos">
+<a class="viewcode-back" href="../../api/atenxa.sprite.Sprite.html#atenxa.sprite.Sprite.SetPos">[ドキュメント]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">SetPos</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sx0</span><span class="p">,</span><span class="n">sy0</span><span class="p">,</span> <span class="n">sx1</span><span class="p">,</span><span class="n">sy1</span><span class="p">,</span> <span class="n">sx2</span><span class="p">,</span><span class="n">sy2</span><span class="p">,</span> <span class="n">sx3</span><span class="p">,</span><span class="n">sy3</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""スプライトの表示座標を設定</span>
 <span class="sd">        </span>
 <span class="sd">        四角形スプライトの画面上の座標を設定します。</span>
 <span class="sd">        このメソッドを実行すると，それ以降は直接指定モードでスプライトを描画します。</span>
@@ -385,8 +395,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="n">sx0</span><span class="p">,</span><span class="n">sy0</span><span class="p">,</span> <span class="n">sx1</span><span class="p">,</span><span class="n">sy1</span><span class="p">,</span> <span class="n">sx2</span><span class="p">,</span><span class="n">sy2</span><span class="p">,</span> <span class="n">sx3</span><span class="p">,</span><span class="n">sy3</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dispdirect</span> <span class="o">=</span> <span class="kc">True</span></div>
 
-<div class="viewcode-block" id="Sprite.SetOrg"><a class="viewcode-back" href="../../api/atenxa.sprite.Sprite.html#atenxa.sprite.Sprite.SetOrg">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">SetOrg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">orgdx</span><span class="p">,</span> <span class="n">orgdy</span><span class="p">):</span>
-        <span class="sd">""" スプライトの基準サイズを設定します。</span>
+
+<div class="viewcode-block" id="Sprite.SetOrg">
+<a class="viewcode-back" href="../../api/atenxa.sprite.Sprite.html#atenxa.sprite.Sprite.SetOrg">[ドキュメント]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">SetOrg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">orgdx</span><span class="p">,</span> <span class="n">orgdy</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">""" スプライトの基準サイズを設定します。</span>
 
 <span class="sd">        このメソッドを実行して以降は，演算指定モードでスプライトを描画します。</span>
 <span class="sd">        基準サイズをもとに、拡大縮小、回転、移動の演算を順番に行い、</span>
@@ -399,8 +412,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">org</span> <span class="o">=</span> <span class="p">(</span><span class="n">orgdx</span><span class="p">,</span> <span class="n">orgdy</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dispdirect</span> <span class="o">=</span> <span class="kc">False</span></div>
 
-<div class="viewcode-block" id="Sprite.SetZoom"><a class="viewcode-back" href="../../api/atenxa.sprite.Sprite.html#atenxa.sprite.Sprite.SetZoom">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">SetZoom</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zoomx</span><span class="p">,</span> <span class="n">zoomy</span><span class="p">):</span>
-        <span class="sd">"""スプライトの拡大縮小率を設定します。</span>
+
+<div class="viewcode-block" id="Sprite.SetZoom">
+<a class="viewcode-back" href="../../api/atenxa.sprite.Sprite.html#atenxa.sprite.Sprite.SetZoom">[ドキュメント]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">SetZoom</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zoomx</span><span class="p">,</span> <span class="n">zoomy</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""スプライトの拡大縮小率を設定します。</span>
 
 <span class="sd">        描画モードが演算指定モードのときに使用されます。</span>
 
@@ -411,8 +427,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">zoom</span> <span class="o">=</span> <span class="p">(</span><span class="n">zoomx</span><span class="p">,</span> <span class="n">zoomy</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dispdirect</span> <span class="o">=</span> <span class="kc">False</span></div>
 
-<div class="viewcode-block" id="Sprite.SetRotate"><a class="viewcode-back" href="../../api/atenxa.sprite.Sprite.html#atenxa.sprite.Sprite.SetRotate">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">SetRotate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pivotx</span><span class="p">,</span> <span class="n">pivoty</span><span class="p">,</span> <span class="n">rot</span><span class="p">):</span>
-        <span class="sd">"""スプライトの回転を設定します。</span>
+
+<div class="viewcode-block" id="Sprite.SetRotate">
+<a class="viewcode-back" href="../../api/atenxa.sprite.Sprite.html#atenxa.sprite.Sprite.SetRotate">[ドキュメント]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">SetRotate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pivotx</span><span class="p">,</span> <span class="n">pivoty</span><span class="p">,</span> <span class="n">rot</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""スプライトの回転を設定します。</span>
 
 <span class="sd">        描画モードが演算指定モードのときに使用されます。</span>
 
@@ -425,23 +444,32 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">rot</span> <span class="o">=</span> <span class="n">rot</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dispdirect</span> <span class="o">=</span> <span class="kc">False</span></div>
 
-<div class="viewcode-block" id="Sprite.SetTranslate"><a class="viewcode-back" href="../../api/atenxa.sprite.Sprite.html#atenxa.sprite.Sprite.SetTranslate">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">SetTranslate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
-        <span class="sd">"""スプライトの移動を設定します。</span>
+
+<div class="viewcode-block" id="Sprite.SetTranslate">
+<a class="viewcode-back" href="../../api/atenxa.sprite.Sprite.html#atenxa.sprite.Sprite.SetTranslate">[ドキュメント]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">SetTranslate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""スプライトの移動を設定します。</span>
 <span class="sd">        </span>
 <span class="sd">        描画モードが演算指定モードのときに使用されます。</span>
 <span class="sd">        """</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">trans</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dispdirect</span> <span class="o">=</span> <span class="kc">False</span></div>
 
-<div class="viewcode-block" id="Sprite.SetColor"><a class="viewcode-back" href="../../api/atenxa.sprite.Sprite.html#atenxa.sprite.Sprite.SetColor">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">SetColor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">):</span>
-        <span class="sd">"""スプライトの色を指定します。</span>
+
+<div class="viewcode-block" id="Sprite.SetColor">
+<a class="viewcode-back" href="../../api/atenxa.sprite.Sprite.html#atenxa.sprite.Sprite.SetColor">[ドキュメント]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">SetColor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""スプライトの色を指定します。</span>
 <span class="sd">        </span>
 <span class="sd">        r,g,b,a: 0.0～1.0の数値を設定します。</span>
 <span class="sd">        """</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Sprite.SetSprite"><a class="viewcode-back" href="../../api/atenxa.sprite.Sprite.html#atenxa.sprite.Sprite.SetSprite">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">SetSprite</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">"""スプライトを画面に表示。</span>
+
+<div class="viewcode-block" id="Sprite.SetSprite">
+<a class="viewcode-back" href="../../api/atenxa.sprite.Sprite.html#atenxa.sprite.Sprite.SetSprite">[ドキュメント]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">SetSprite</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""スプライトを画面に表示。</span>
 <span class="sd">        </span>
 <span class="sd">        直接指定モードか演算指定モードを自動で選択して表示します。</span>
 <span class="sd">        """</span>
@@ -458,7 +486,9 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">vrmsprite</span><span class="o">.</span><span class="n">SetTranslate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">trans</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">vrmsprite</span><span class="o">.</span><span class="n">SetColor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">vrmsprite</span><span class="o">.</span><span class="n">SetSprite</span><span class="p">()</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vrmsprite</span><span class="o">.</span><span class="n">SetSprite</span><span class="p">()</span></div>
+</div>
+
 
 </pre></div>
 
@@ -484,7 +514,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

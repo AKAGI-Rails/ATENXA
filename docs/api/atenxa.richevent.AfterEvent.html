@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 
-<html lang="ja">
+<html lang="ja" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -47,14 +47,13 @@
   
   
     <title>AfterEvent &#8212; ATENXA 1.0.0 ドキュメント</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/translations.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=75810a84" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css?v=79c92029" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <script src="../_static/documentation_options.js?v=144c8c96"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=4755f45a"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
     <link rel="next" title="BaseEvent" href="atenxa.richevent.BaseEvent.html" />
@@ -104,8 +103,8 @@
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="../search.html" method="GET" name="search">
-      <input type="text" class="md-search__input" name="q" placeholder="Search"
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder=""Search""
              autocapitalize="off" autocomplete="off" spellcheck="false"
              data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
@@ -302,7 +301,18 @@
               <div class="md-sidebar__inner">
                 
 <nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">"Contents"</label>
   <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#api-atenxa-richevent-afterevent--page-root" class="md-nav__link">AfterEvent</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#atenxa.richevent.AfterEvent" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AfterEvent</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#atenxa.richevent.AfterEvent.exec" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AfterEvent.exec()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
     
 <li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/api/atenxa.richevent.AfterEvent.rst.txt">ソースコードを表示</a> </li>
 
@@ -317,17 +327,17 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="api-atenxa-richevent-afterevent--page-root">AfterEvent<a class="headerlink" href="#api-atenxa-richevent-afterevent--page-root" title="このヘッドラインへのパーマリンク">¶</a></h1>
+  <section id="afterevent">
+<h1 id="api-atenxa-richevent-afterevent--page-root">AfterEvent<a class="headerlink" href="#api-atenxa-richevent-afterevent--page-root" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt id="atenxa.richevent.AfterEvent">
-<em class="property">class </em><code class="sig-prename descclassname">atenxa.richevent.</code><code class="sig-name descname">AfterEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interval</span></em>, <em class="sig-param"><span class="n">callback</span></em>, <em class="sig-param"><span class="n">args</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">kwargs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">userid</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">obj</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/richevent.html#AfterEvent"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#atenxa.richevent.AfterEvent" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>ベースクラス: <a class="reference internal" href="atenxa.richevent.BaseEvent.html#atenxa.richevent.BaseEvent" title="atenxa.richevent.BaseEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">atenxa.richevent.BaseEvent</span></code></a></p>
+<dt class="sig sig-object py" id="atenxa.richevent.AfterEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">atenxa.richevent.</span></span><span class="sig-name descname"><span class="pre">AfterEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interval</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">userid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/richevent.html#AfterEvent"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#atenxa.richevent.AfterEvent" title="Link to this definition">¶</a></dt>
+<dd><p>ベースクラス: <a class="reference internal" href="atenxa.richevent.BaseEvent.html#atenxa.richevent.BaseEvent" title="atenxa.richevent.BaseEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseEvent</span></code></a></p>
 <p>指定時間後に実行するATENXA式イベント</p>
 <p>interval秒後に引数args，キーワード引数kwargsでcallbackを実行します。
 args*がNoneなら空のリストが使用されます。</p>
 <dl class="field-list simple">
-<dt class="field-odd">パラメータ</dt>
+<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>interval</strong> -- 時間(秒)</p></li>
 <li><p><strong>callback</strong> -- 実行する関数名</p></li>
@@ -349,11 +359,7 @@ args*がNoneなら空のリストが使用されます。</p>
 </div>
 <p>callbackにはユーザーが定義した関数やクラスメソッドを与えることもできます。</p>
 <p class="rubric">Methods Summary</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%"/>
-<col style="width: 90%"/>
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#atenxa.richevent.AfterEvent.exec" title="atenxa.richevent.AfterEvent.exec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exec</span></code></a>()</p></td>
 <td><p>コールバック関数を実行します。</p></td>
@@ -362,8 +368,8 @@ args*がNoneなら空のリストが使用されます。</p>
 </table>
 <p class="rubric">Methods Documentation</p>
 <dl class="py method">
-<dt id="atenxa.richevent.AfterEvent.exec">
-<code class="sig-name descname">exec</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/richevent.html#AfterEvent.exec"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#atenxa.richevent.AfterEvent.exec" title="この定義へのパーマリンク">¶</a></dt>
+<dt class="sig sig-object py" id="atenxa.richevent.AfterEvent.exec">
+<span class="sig-name descname"><span class="pre">exec</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/atenxa/richevent.html#AfterEvent.exec"><span class="viewcode-link"><span class="pre">[ソース]</span></span></a><a class="headerlink" href="#atenxa.richevent.AfterEvent.exec" title="Link to this definition">¶</a></dt>
 <dd><p>コールバック関数を実行します。</p>
 <p>イベントハンドラから呼び出されます。</p>
 <div class="admonition note">
@@ -373,7 +379,7 @@ args*がNoneなら空のリストが使用されます。</p>
 </div>
 </dd></dl>
 </dd></dl>
-
+</section>
 
 
           </article>
@@ -394,7 +400,7 @@ args*がNoneなら空のリストが使用されます。</p>
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> Previous </span> richevent </span>
+                      class="md-footer-nav__direction"> "Previous" </span> richevent </span>
               </div>
             </a>
           
@@ -404,7 +410,7 @@ args*がNoneなら空のリストが使用されます。</p>
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> BaseEvent </span>
+                class="md-footer-nav__direction"> "Next" </span> BaseEvent </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
@@ -422,7 +428,7 @@ args*がNoneなら空のリストが使用されます。</p>
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

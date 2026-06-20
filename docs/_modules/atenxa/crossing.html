@@ -1,7 +1,6 @@
-
 <!DOCTYPE html>
 
-<html lang="ja">
+<html lang="ja" data-content_root="../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -47,14 +46,13 @@
   
   
     <title>atenxa.crossing &#8212; ATENXA 1.0.0 ドキュメント</title>
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/material.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/translations.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=75810a84" />
+    <link rel="stylesheet" type="text/css" href="../../_static/material.css?v=79c92029" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <script src="../../_static/documentation_options.js?v=144c8c96"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/translations.js?v=4755f45a"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="検索" href="../../search.html" />
   
@@ -102,8 +100,8 @@
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="../../search.html" method="GET" name="search">
-      <input type="text" class="md-search__input" name="q" placeholder="Search"
+    <form class="md-search__form" action="../../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder=""Search""
              autocapitalize="off" autocomplete="off" spellcheck="false"
              data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
@@ -168,7 +166,6 @@
       <ul class="md-tabs__list">
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">ATENXA 1.0.0 ドキュメント</a></li>
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">モジュールコード</a></li>
-          <li class="md-tabs__item"><a href="../atenxa.html" class="md-tabs__link">atenxa</a></li>
       </ul>
     </div>
   </nav>
@@ -290,14 +287,16 @@
 <span class="sd">"""</span>
 <span class="c1"># import vrmapi</span>
 <span class="c1">#from atenxa.basis import printLOG, pprintLOG</span>
-<span class="kn">from</span> <span class="nn">atenxa._basis</span> <span class="kn">import</span> <span class="n">ATENXAError</span>
-<span class="kn">from</span> <span class="nn">atenxa.richevent</span> <span class="kn">import</span> <span class="n">richevent</span> <span class="k">as</span> <span class="n">_richevent</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">atenxa._basis</span><span class="w"> </span><span class="kn">import</span> <span class="n">ATENXAError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">atenxa.richevent</span><span class="w"> </span><span class="kn">import</span> <span class="n">richevent</span> <span class="k">as</span> <span class="n">_richevent</span>
 
-<span class="kn">from</span> <span class="nn">._core</span> <span class="kn">import</span> <span class="n">crossing_group</span> <span class="k">as</span> <span class="n">_crossing_group</span>
-<span class="kn">from</span> <span class="nn">._core</span> <span class="kn">import</span> <span class="n">setup_hub</span> <span class="k">as</span> <span class="n">_setup_hub</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._core</span><span class="w"> </span><span class="kn">import</span> <span class="n">crossing_group</span> <span class="k">as</span> <span class="n">_crossing_group</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._core</span><span class="w"> </span><span class="kn">import</span> <span class="n">setup_hub</span> <span class="k">as</span> <span class="n">_setup_hub</span>
 
-<div class="viewcode-block" id="activate"><a class="viewcode-back" href="../../api/atenxa.crossing.activate.html#atenxa.crossing.activate">[ドキュメント]</a><span class="k">def</span> <span class="nf">activate</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">ev</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">rev</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
-    <span class="sd">"""踏切部品をアクティベート</span>
+<div class="viewcode-block" id="activate">
+<a class="viewcode-back" href="../../api/atenxa.crossing.activate.html#atenxa.crossing.activate">[ドキュメント]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">activate</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">ev</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">rev</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""踏切部品をアクティベート</span>
 <span class="sd">    </span>
 <span class="sd">    踏切部品をatenxa踏切システムで有効化します。</span>
 <span class="sd">    踏切部品のイベントハンドラに書き込みます。</span>
@@ -335,8 +334,11 @@
             <span class="n">g</span> <span class="o">=</span> <span class="n">_setup_hub</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
         <span class="n">g</span><span class="o">.</span><span class="n">addmember</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">rev</span><span class="p">,</span><span class="n">delay</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="activate_close"><a class="viewcode-back" href="../../api/atenxa.crossing.activate_close.html#atenxa.crossing.activate_close">[ドキュメント]</a><span class="k">def</span> <span class="nf">activate_close</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">ev</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">direction</span><span class="p">):</span>
-    <span class="sd">"""センサー通過で踏切を閉じる</span>
+
+<div class="viewcode-block" id="activate_close">
+<a class="viewcode-back" href="../../api/atenxa.crossing.activate_close.html#atenxa.crossing.activate_close">[ドキュメント]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">activate_close</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">ev</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">direction</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""センサー通過で踏切を閉じる</span>
 
 <span class="sd">    atenxa踏切システムの踏切を閉じる指令を送ります。</span>
 <span class="sd">    センサーのイベントハンドラ直下に記述します。</span>
@@ -364,8 +366,11 @@
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"group名が不正です (</span><span class="si">{}</span><span class="s2">)."</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">group</span><span class="p">))</span>
             <span class="n">g</span><span class="o">.</span><span class="n">approach</span><span class="p">(</span><span class="n">direction</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="activate_open"><a class="viewcode-back" href="../../api/atenxa.crossing.activate_open.html#atenxa.crossing.activate_open">[ドキュメント]</a><span class="k">def</span> <span class="nf">activate_open</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">ev</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">direction</span><span class="p">):</span>
-    <span class="sd">"""踏切からの列車退出を検出</span>
+
+<div class="viewcode-block" id="activate_open">
+<a class="viewcode-back" href="../../api/atenxa.crossing.activate_open.html#atenxa.crossing.activate_open">[ドキュメント]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">activate_open</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">ev</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">direction</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""踏切からの列車退出を検出</span>
 
 <span class="sd">    atenxa踏切システムに，列車が踏切から退出したことを知らせます。</span>
 <span class="sd">    踏切に残った編成がいなくなれば踏切を開放します。</span>
@@ -393,6 +398,7 @@
             <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"group名が不正です (</span><span class="si">{}</span><span class="s2">)."</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">group</span><span class="p">))</span>
             <span class="n">g</span><span class="o">.</span><span class="n">passed</span><span class="p">(</span><span class="n">direction</span><span class="p">)</span></div>
+
 </pre></div>
 
           </article>
@@ -417,7 +423,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

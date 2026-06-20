@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 
-<html lang="ja">
+<html lang="ja" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -47,14 +47,13 @@
   
   
     <title>ATENXA for VRMNX &#8212; ATENXA 1.0.0 ドキュメント</title>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/material.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/translations.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=75810a84" />
+    <link rel="stylesheet" type="text/css" href="_static/material.css?v=79c92029" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+    <script src="_static/documentation_options.js?v=144c8c96"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=4755f45a"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
     <link rel="next" title="クイックスタート" href="quickstart.html" />
@@ -103,8 +102,8 @@
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
-    <form class="md-search__form" action="search.html" method="GET" name="search">
-      <input type="text" class="md-search__input" name="q" placeholder="Search"
+    <form class="md-search__form" action="search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder=""Search""
              autocapitalize="off" autocomplete="off" spellcheck="false"
              data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
@@ -265,7 +264,7 @@
               <div class="md-sidebar__inner">
                 
 <nav class="md-nav md-nav--secondary">
-    <label class="md-nav__title" for="__toc">Contents</label>
+    <label class="md-nav__title" for="__toc">"Contents"</label>
   <ul class="md-nav__list" data-md-scrollfix="">
         <li class="md-nav__item"><a href="#index--page-root" class="md-nav__link">ATENXA for VRMNX</a><nav class="md-nav">
               <ul class="md-nav__list">
@@ -291,13 +290,13 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="index--page-root">ATENXA for VRMNX<a class="headerlink" href="#index--page-root" title="このヘッドラインへのパーマリンク">¶</a></h1>
+  <section id="atenxa-for-vrmnx">
+<h1 id="index--page-root">ATENXA for VRMNX<a class="headerlink" href="#index--page-root" title="Link to this heading">¶</a></h1>
 <img alt="ATENXA - Advanced Toolkit for Enhancing VRMNX by AKAGI" class="align-center" src="_images/atenxa.png"/>
 <p>ATENXA (アテンザ) は，
 VRMNXのPythonスクリプトに便利な機能を提供するパッケージです。</p>
-
-<h2 id="id1">主要な機能<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<section id="id1">
+<h2 id="id1">主要な機能<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>汎用の便利なログ出力</p></li>
 <li><p>便利な時間系イベントシステム</p></li>
@@ -310,10 +309,10 @@ VRMNXのPythonスクリプトに便利な機能を提供するパッケージで
 <li><p>自動運転</p></li>
 <li><p>閉塞・ATS</p></li>
 </ul>
-
-
-
-<h1 id="download-and-install">Download and Install<a class="headerlink" href="#download-and-install" title="このヘッドラインへのパーマリンク">¶</a></h1>
+</section>
+</section>
+<section id="download-and-install">
+<h1 id="download-and-install">Download and Install<a class="headerlink" href="#download-and-install" title="Link to this heading">¶</a></h1>
 <p>ATENXAは下記のリンクからGitHubリポジトリの中身をZipで配布しています。</p>
 <p><a class="reference external" href="https://github.com/AKAGI-Rails/ATENXA/archive/refs/heads/master.zip">ATENXAのダウンロード(zip)</a></p>
 <p>アーカイブ内の``atenxa``フォルダを、そのままお使いのレイアウトと同じフォルダ内にコピーしてください。</p>
@@ -326,40 +325,31 @@ VRMNXのPythonスクリプトに便利な機能を提供するパッケージで
 </div>
 <p>ATENXAのバージョンが競合しないよう，レイアウトスクリプトで以下のようにセットアップすることを推奨します。</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">レイアウトスクリプト</span><a class="headerlink" href="#id3" title="このコードへのパーマリンク">¶</a></div>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#LAYOUT</span>
-<span class="kn">import</span> <span class="nn">vrmapi</span>
-
-<span class="c1"># レイアウトと同じディレクトリのpythonスクリプトを優先的にインポートする</span>
-<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">vrmapi</span><span class="o">.</span><span class="n">SYSTEM</span><span class="p">()</span><span class="o">.</span><span class="n">GetLayoutDir</span><span class="p">())</span>
-
-<span class="kn">import</span> <span class="nn">atenxa</span>
-
-<span class="k">def</span> <span class="nf">vrmevent</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">ev</span><span class="p">,</span><span class="n">param</span><span class="p">):</span>
-   <span class="k">pass</span>
+<div class="code-block-caption"><span class="caption-text">レイアウトスクリプト</span><a class="headerlink" href="#id3" title="Link to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">#LAYOUT</span>
+<span class="linenos"> 2</span><span class="kn">import</span><span class="w"> </span><span class="nn">vrmapi</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="c1"># レイアウトと同じディレクトリのpythonスクリプトを優先的にインポートする</span>
+<span class="linenos"> 5</span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span>
+<span class="linenos"> 6</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">vrmapi</span><span class="o">.</span><span class="n">SYSTEM</span><span class="p">()</span><span class="o">.</span><span class="n">GetLayoutDir</span><span class="p">())</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="kn">import</span><span class="w"> </span><span class="nn">atenxa</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="k">def</span><span class="w"> </span><span class="nf">vrmevent</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">ev</span><span class="p">,</span><span class="n">param</span><span class="p">):</span>
+<span class="linenos">11</span>   <span class="k">pass</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <p>これでお使いのレイアウトから <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">atenxa</span></code> できるようになります。</p>
-
-
-<h1 id="id2">もくじ<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h1>
+</section>
+<section id="id2">
+<h1 id="id2">もくじ<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">クイックスタート</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/index.html">チュートリアル</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tutorial/crossing.html">自動踏切のセットアップ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/meter.html">速度計スプライトの基本と応用</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="reference.html">ATENXA APIリファレンス</a><ul>
@@ -378,7 +368,7 @@ VRMNXのPythonスクリプトに便利な機能を提供するパッケージで
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">外部リンク</span></p>
+<p class="caption" role="heading"><span class="caption-text">外部リンク</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://docs.python.org/ja/3.7/index.html">Python 3.7</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://vrmcloud.net/nx/script/">VRMNX Scriptマニュアル</a></li>
@@ -389,7 +379,7 @@ VRMNXのPythonスクリプトに便利な機能を提供するパッケージで
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">モジュール索引</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">検索ページ</span></a></p></li>
 </ul>
-
+</section>
 
 
           </article>
@@ -407,7 +397,7 @@ VRMNXのPythonスクリプトに便利な機能を提供するパッケージで
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> クイックスタート </span>
+                class="md-footer-nav__direction"> "Next" </span> クイックスタート </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
@@ -425,7 +415,7 @@ VRMNXのPythonスクリプトに便利な機能を提供するパッケージで
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>
