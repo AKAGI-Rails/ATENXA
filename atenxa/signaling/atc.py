@@ -1,0 +1,7 @@
+# -*- coding: utf-8 -*-
+"""ATENXA信号システム - ATC
+
+簡単な組み込みとリアルな動作が特長の信号制御パッケージです。
+"""
+
+raise NotImplementedError
