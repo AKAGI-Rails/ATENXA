@@ -1,5 +1,9 @@
+# This is a third-party stub file for vrmapi.
+# Almost automatically generated from VRMNX Version 6.1.0.574 on 2026-07-19.
+
 from typing import overload, List
 import vrmapi
+
 def CLEARLOG() -> None: ...
 
 class IMGUI:
